@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ammo
+  - Weapon
+  - OffHandWeapon
+  - MainHandWeapon
+  - Body
+  - RightLeg
+  - RightSmallLeg
+  - LeftLeg
+  - LeftSmallLeg
+  - Head
+  - RightLimb
+  - RightSmallLimb
+  - LeftLimb
+  - LeftSmallLimb
+  - NormalGround
+  - Bullet
+  - Hostile
+  - MeleeWeapon
+  - Cloth
+  - Dirt
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - PlayerLeg
+  - Weapon
+  - Bullet
+  - Ammo
+  - OffHandWeapon
+  - LabNPC
+  - Wall
+  - Blood
+  - Shelf
+  - Shell
+  - Explosion
+  - MeleeWeapon
+  - Cover
+  - Furniture
+  - Dirt
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BackGround
+    uniqueID: 2786261915
+    locked: 0
+  - name: Deep
+    uniqueID: 3045483181
+    locked: 0
+  - name: Dirt
+    uniqueID: 3661352013
+    locked: 0
+  - name: Deepp1
+    uniqueID: 4091134237
+    locked: 0
+  - name: Deep1Leg
+    uniqueID: 3589739361
+    locked: 0
+  - name: Deep1Stocking
+    uniqueID: 586268011
+    locked: 0
+  - name: DeepShoesLayer
+    uniqueID: 71312659
+    locked: 0
+  - name: Deep1Cloth
+    uniqueID: 979413639
+    locked: 0
+  - name: HindLayer
+    uniqueID: 24403471
+    locked: 0
+  - name: RightLap
+    uniqueID: 3743028771
+    locked: 0
+  - name: RightLeg
+    uniqueID: 1382231523
+    locked: 0
+  - name: HindLayerStocking
+    uniqueID: 2098866299
+    locked: 0
+  - name: HindShoesLayer
+    uniqueID: 227415683
+    locked: 0
+  - name: HindLayerCloth
+    uniqueID: 2836319679
+    locked: 0
+  - name: BodyClothLayer
+    uniqueID: 1523470933
+    locked: 0
+  - name: BodyArmorLayer
+    uniqueID: 790649475
+    locked: 0
+  - name: Weapon
+    uniqueID: 818089323
+    locked: 0
+  - name: NPCLayer
+    uniqueID: 3088144061
+    locked: 0
+  - name: NPCLayerCloth
+    uniqueID: 242853503
+    locked: 0
+  - name: BloodDirt
+    uniqueID: 3202042979
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 3155246639
+    locked: 0
+  - name: Out
+    uniqueID: 3142100553
+    locked: 0

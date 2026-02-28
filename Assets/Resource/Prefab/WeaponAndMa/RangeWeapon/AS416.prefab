@@ -1,0 +1,2758 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &461918961483646722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6345147157778565567}
+  - component: {fileID: 2078873989328914543}
+  m_Layer: 7
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6345147157778565567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461918961483646722}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0045137405, y: 0.0033664405, z: 0}
+  m_LocalScale: {x: 7.136795, y: 7.136795, z: 7.136795}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7996988217934697322}
+  - {fileID: 2596982425901944197}
+  m_Father: {fileID: 4990103851133610885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2078873989328914543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461918961483646722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 0.9528883, g: 1, b: 0.3150943, a: 1}
+  m_Intensity: 10
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: ad6286b50f5e7401000000002f3e11bc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0.15575, y: -0.007400006, z: 0}
+    m_Extent: {x: 0.60905004, y: 0.62450004, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: 0.11564372, y: -0.13295414, z: 0}
+  - {x: 0.19361234, y: -0.08483023, z: 0}
+  - {x: 0.26595736, y: -0.010471972, z: 0}
+  - {x: 0.19462179, y: 0.07015016, z: 0}
+  - {x: 0.10144484, y: 0.11873637, z: 0}
+  - {x: 0.046364043, y: -0.0021460024, z: 0}
+--- !u!1 &1050120499349820692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6360731066471544782}
+  - component: {fileID: 5215634752010495617}
+  - component: {fileID: 3003419599003497802}
+  - component: {fileID: 2551660202573368109}
+  - component: {fileID: 200135157357893162}
+  - component: {fileID: 1387486923672620869}
+  - component: {fileID: 495339297825099854}
+  - component: {fileID: 5363091626667315185}
+  - component: {fileID: 6340944752774781651}
+  m_Layer: 7
+  m_Name: AS416
+  m_TagString: MainHandWeapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6360731066471544782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.2524, y: -4.0863867, z: 0}
+  m_LocalScale: {x: 0.17591919, y: 0.17591919, z: 0.17591919}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4990103851133610885}
+  - {fileID: 1376024540175651518}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5215634752010495617
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 818089323
+  m_SortingLayer: -4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -3294788082675926453, guid: afdb31fff8bd39e4b9424ffb498712cd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5, y: 1.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &3003419599003497802
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 136
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &2551660202573368109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.10585606, y: -0.008748889}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 1.44}
+    newSize: {x: 5, y: 1.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.8049977, y: 1.3021612}
+  m_EdgeRadius: 0
+--- !u!114 &200135157357893162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dffb232cfca61b41927363acbc0e59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 14
+  TheSprite: {fileID: -2626846081787623813, guid: 2b598af424f029c489c63830fef3fd5d, type: 3}
+  UniqueCode: _AS416
+  IsEquiped: 0
+  TheInventoryManager: {fileID: 0}
+  CurrentIndex: 0
+  CurrentIndex_ItemSlot: 0
+  TheMagazine: {fileID: 0}
+  Stackable: 0
+  MaxStack: 0
+  RemainAmmo: 0
+  MaxAmmo: 0
+  IsMainHand: 1
+  Consumable:
+    AllConsumables: []
+  Ammo:
+    AllAmmo:
+    - UniqueCode: _NormalPistolAmmo
+      TheDescription: _NormalPistolAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\PistolMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\NormalPistolMagazine
+        1.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 10
+      RemainMagazine: 10
+      Damage: 20
+      TheBulletType: 1
+    - UniqueCode: _AS416Ammo
+      TheDescription: _AS416Ammo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\AssaultRifleMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\AS416_Magazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 30
+      RemainMagazine: 30
+      Damage: 12
+      TheBulletType: 1
+    - UniqueCode: _NormalShotGunAmmo
+      TheDescription: _NormalShotGunAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\NormalShotGunAmmo.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\NormalShotGunAmmo.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 8
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 8
+      TheBulletType: 1
+    - UniqueCode: _SubmachineGunAmmo
+      TheDescription: _SubmachineGunAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\SubMachineMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\SubmachineMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 25
+      RemainMagazine: 25
+      Damage: 10
+      TheBulletType: 1
+    - UniqueCode: _ShotGunAmmo
+      TheDescription: _ShotGunAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\ShotGunMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\ShotGunMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 6
+      RemainMagazine: 6
+      Damage: 7
+      TheBulletType: 1
+    - UniqueCode: _HeavySMGAmmo
+      TheDescription: _HeavySMGAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\HeavySMGMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\HeavySMGMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 40
+      RemainMagazine: 40
+      Damage: 11
+      TheBulletType: 1
+    - UniqueCode: _SniperAmmo
+      TheDescription: _SniperAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\SniperMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\SniperMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 7
+      RemainMagazine: 7
+      Damage: 70
+      TheBulletType: 1
+    - UniqueCode: _Type2LMGAmmo
+      TheDescription: _Type2LMGAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\Type2LMGMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\Type2LMGMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 100
+      RemainMagazine: 100
+      Damage: 15
+      TheBulletType: 1
+    - UniqueCode: _LMGAmmo
+      TheDescription: _LMGAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\LMGMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\LMGMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 120
+      RemainMagazine: 120
+      Damage: 15
+      TheBulletType: 1
+    - UniqueCode: _HeavyPistolAmmo
+      TheDescription: _HeavyPistolAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\HeavyPistolMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\HeavyPistolMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 8
+      RemainMagazine: 8
+      Damage: 30
+      TheBulletType: 1
+    - UniqueCode: _GrenadeLauncherAmmo
+      TheDescription: _GrenadeLauncherAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\GrenadeLauncherAmmo.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\GrenadeLauncherAmmo.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 5
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 150
+      TheBulletType: 1
+    - UniqueCode: _MK1907Ammo
+      TheDescription: _MK1907Ammo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\BattleRifleMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\MK1907_Magazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 21
+      RemainMagazine: 21
+      Damage: 20
+      TheBulletType: 1
+    - UniqueCode: _Nail
+      TheDescription: _Nail_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\Nail.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\Nail.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 16
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 11
+      TheBulletType: 1
+    - UniqueCode: _RevolverAmmo
+      TheDescription: _RevolverAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\RevolverAmmo.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\RevolverAmmo.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 12
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 45
+      TheBulletType: 1
+    - UniqueCode: _LightAssaultRifleAmmo
+      TheDescription: _LightAssaultRifleAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\LAssaultRifleMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\LAssaultRifleMagzine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 40
+      RemainMagazine: 40
+      Damage: 10
+      TheBulletType: 1
+    - UniqueCode: _AirGunAmmo
+      TheDescription: _AirGunAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\AirGunMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\AirGunMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 25
+      RemainMagazine: 25
+      Damage: 7
+      TheBulletType: 1
+    - UniqueCode: _HighVelocityRifleAmmo
+      TheDescription: _HighVelocityRifleAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\LeverActionRifleAmmo.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\HighVelocityRifleAmmo.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 10
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 34
+      TheBulletType: 1
+    - UniqueCode: _ExtendedPistolMagazine
+      TheDescription: _ExtendedPistolMagazine_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\AutoPistolMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\ExtendedPistolMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 26
+      RemainMagazine: 26
+      Damage: 15
+      TheBulletType: 1
+    - UniqueCode: _MultiAssaultRifleAmmo
+      TheDescription: _MultiAssaultRifleAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\MultiAssaultRifleMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\MultiAssaultRifleMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 30
+      RemainMagazine: 30
+      Damage: 7
+      TheBulletType: 1
+    - UniqueCode: _SignalFlare
+      TheDescription: _SignalFlare_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\FlareGunAmmo.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\SignalFlare.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 1
+      MaxStack: 2
+      InventoryObjs: []
+      MaxMagazine: 0
+      RemainMagazine: 0
+      Damage: 90
+      TheBulletType: 1
+    - UniqueCode: _LaserPistolAmmo
+      TheDescription: _LaserPistolAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\LaserPistolMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\LaserPistolMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 10
+      RemainMagazine: 10
+      Damage: 60
+      TheBulletType: 1
+    - UniqueCode: _LaserCannonAmmo
+      TheDescription: _LaserCannonAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\LaserCannonMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\LaserCannonMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 10
+      RemainMagazine: 10
+      Damage: 80
+      TheBulletType: 2
+    - UniqueCode: _HalfAutoAmmo
+      TheDescription: _HalfAutoAmmo_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\HalfAutoMagazine.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\HalfAutoMagazine.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 10
+      RemainMagazine: 10
+      Damage: 60
+      TheBulletType: 2
+    - UniqueCode: _BigFireJar
+      TheDescription: _BigFireJar_Des
+      TheSprite_Path: Assets\Resource\Png\GunAndMa\Magazine\FireJar.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\Magazine\FireJar.prefab
+      Type: 3
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      MaxMagazine: 800
+      RemainMagazine: 800
+      Damage: 1
+      TheBulletType: 0
+  LongRangeWeapon:
+    AllLongRangeWeapons:
+    - UniqueCode: _BasicPistol
+      TheDescription: _BasicPistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\Pistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\pistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.4
+      DamageMuti: 1
+      ShootSpeed: 0.3
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _NormalPistolAmmo
+      - _ExtendedPistolMagazine
+    - UniqueCode: _AS416
+      TheDescription: _AS416_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AS416_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AS416.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.3
+      DamageMuti: 1
+      ShootSpeed: 0.5
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _AS416Ammo
+    - UniqueCode: _UZISMG
+      TheDescription: _UZISMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\UZISMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\UZISMG.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.8
+      DamageMuti: 1
+      ShootSpeed: 0.01
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _SubmachineGunAmmo
+    - UniqueCode: _M414ShotGun
+      TheDescription: _M414ShotGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\M414ShotGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\M414ShotGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 4
+      DamageMuti: 1
+      ShootSpeed: 1.85
+      MaxAmmoStack: 5
+      AmmoCode:
+      - _NormalShotGunAmmo
+    - UniqueCode: _S10ShotGun
+      TheDescription: _S10ShotGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\S10ShotGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\S10ShotGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 5
+      DamageMuti: 0.9
+      ShootSpeed: 1
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _ShotGunAmmo
+    - UniqueCode: _UMG45SMG
+      TheDescription: _UMG45SMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\UMG45SMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\UMG45SMG.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.6
+      DamageMuti: 1.2
+      ShootSpeed: 0.06
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HeavySMGAmmo
+      - _SubmachineGunAmmo
+    - UniqueCode: _AWMSR
+      TheDescription: _AWMSR_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AWMSR_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AWMSR.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 10
+      DamageMuti: 1
+      ShootSpeed: 5.5
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _SniperAmmo
+    - UniqueCode: _MK1941LMG
+      TheDescription: _MK1941LMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\MK1941LMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\MK1941LMG.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 2.5
+      DamageMuti: 1.1
+      ShootSpeed: 0.035
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _Type2LMGAmmo
+    - UniqueCode: _TP249LMG
+      TheDescription: _TP249LMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP249LMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP249LMG.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 2
+      DamageMuti: 1.3
+      ShootSpeed: 0.08
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _LMGAmmo
+    - UniqueCode: _C98Pistol
+      TheDescription: _C98Pistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\C98Pistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\C98Pistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.5
+      DamageMuti: 1.2
+      ShootSpeed: 0.7
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HeavyPistolAmmo
+    - UniqueCode: _GrenadeLauncher
+      TheDescription: _GrenadeLauncher_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\GrenadeLauncher_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\GrenadeLauncher.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 1
+      IsLaserWeapon: 0
+      BackwardForce: 4
+      DamageMuti: 1
+      ShootSpeed: 0.8
+      MaxAmmoStack: 4
+      AmmoCode:
+      - _GrenadeLauncherAmmo
+    - UniqueCode: _MK1907
+      TheDescription: _MK1907_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\MK1907_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\MK1907.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1
+      DamageMuti: 1
+      ShootSpeed: 0.03
+      MaxAmmoStack: 4
+      AmmoCode:
+      - _MK1907Ammo
+    - UniqueCode: _NailGun
+      TheDescription: _NailGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\NailGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\NailGun.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 1
+      IsLaserWeapon: 0
+      BackwardForce: 2
+      DamageMuti: 1
+      ShootSpeed: 0.5
+      MaxAmmoStack: 8
+      AmmoCode:
+      - _Nail
+    - UniqueCode: _Revolver
+      TheDescription: _Revolver_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\Revolver_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\Revolver.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 2
+      DamageMuti: 1.3
+      ShootSpeed: 0.4
+      MaxAmmoStack: 6
+      AmmoCode:
+      - _RevolverAmmo
+    - UniqueCode: _LS416
+      TheDescription: _LS416_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\LS416_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\LS416.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.8
+      DamageMuti: 0.85
+      ShootSpeed: 0.07
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _LightAssaultRifleAmmo
+      - _AS416Ammo
+    - UniqueCode: _AirGun
+      TheDescription: _AirGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AirGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AirGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.7
+      DamageMuti: 1
+      ShootSpeed: 0.06
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _AirGunAmmo
+    - UniqueCode: _H1894Rifle
+      TheDescription: _H1894Rifle_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\H1894Rifle_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\H1894Rifle.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.7
+      DamageMuti: 1
+      ShootSpeed: 0.06
+      MaxAmmoStack: 6
+      AmmoCode:
+      - _HighVelocityRifleAmmo
+    - UniqueCode: _AutoPistol
+      TheDescription: _AutoPistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AutoPistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AutoPistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.5
+      DamageMuti: 0.85
+      ShootSpeed: 0.03
+      MaxAmmoStack: 6
+      AmmoCode:
+      - _ExtendedPistolMagazine
+      - _NormalPistolAmmo
+    - UniqueCode: _MultiAssaultRifle
+      TheDescription: _MultiAssaultRifle_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\MultiAssaultRifle_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\MultiAssaultRifle.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 3
+      DamageMuti: 1
+      ShootSpeed: 0.2
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _MultiAssaultRifleAmmo
+      - _AS416Ammo
+    - UniqueCode: _BattleFlareGun
+      TheDescription: _BattleFlareGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\BattleFlareGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\BattleFlareGun.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 1
+      IsLaserWeapon: 0
+      BackwardForce: 2
+      DamageMuti: 1
+      ShootSpeed: 0.1
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _SignalFlare
+    - UniqueCode: _LaserPistol
+      TheDescription: _LaserPistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\LaserPistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\LaserPistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 1
+      IsLaserWeapon: 1
+      BackwardForce: 2
+      DamageMuti: 1
+      ShootSpeed: 0.3
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _LaserPistolAmmo
+    - UniqueCode: _LaserCannon
+      TheDescription: _LaserCannon_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\LaserCannon_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\LaserCannon.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 1
+      BackwardForce: 5
+      DamageMuti: 1
+      ShootSpeed: 0.7
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _LaserCannonAmmo
+    - UniqueCode: _LaserAssaultRifle
+      TheDescription: _LaserAssaultRifle_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\LaserAssaultRifle_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\LaserAssaultRifle.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 1
+      BackwardForce: 3
+      DamageMuti: 1.2
+      ShootSpeed: 0.4
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _AS416Ammo
+    - UniqueCode: _HP9ShotGun
+      TheDescription: _HP9ShotGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\HP9ShotGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\HP9ShotGun.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 3
+      DamageMuti: 0.75
+      ShootSpeed: 0.5
+      MaxAmmoStack: 2
+      AmmoCode:
+      - _NormalShotGunAmmo
+    - UniqueCode: _TP2Revolver
+      TheDescription: _TP2Revolver_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP2Revolver_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP2Revolver.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 3
+      DamageMuti: 1.3
+      ShootSpeed: 0.4
+      MaxAmmoStack: 4
+      AmmoCode:
+      - _RevolverAmmo
+    - UniqueCode: _TP28AssaultPistol
+      TheDescription: _TP28AssaultPistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP28AssaultPistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP28AssaultPistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.5
+      DamageMuti: 0.9
+      ShootSpeed: 0.025
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _ExtendedPistolMagazine
+      - _SubmachineGunAmmo
+      - _NormalPistolAmmo
+    - UniqueCode: _AntiTankSR
+      TheDescription: _AntiTankSR_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AntiTankSR_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AntiTankSR.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 15
+      DamageMuti: 2.5
+      ShootSpeed: 7.5
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _SniperAmmo
+    - UniqueCode: _TheHunter
+      TheDescription: _TheHunter_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TheHunter_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TheHunter.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 5
+      DamageMuti: 1.5
+      ShootSpeed: 0.5
+      MaxAmmoStack: 2
+      AmmoCode:
+      - _NormalShotGunAmmo
+    - UniqueCode: _TP2BR
+      TheDescription: _TP2BR_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP2BR_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP2BR.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.7
+      DamageMuti: 1.2
+      ShootSpeed: 0.08
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _MK1907Ammo
+    - UniqueCode: _TP2MR
+      TheDescription: _TP2MR_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP2MR_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP2MR.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.5
+      DamageMuti: 1.2
+      ShootSpeed: 0.4
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HalfAutoAmmo
+    - UniqueCode: _HalfAutoRifle
+      TheDescription: _HalfAutoRifle_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\HalfAutoRifle_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\HalfAutoRifle.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.1
+      DamageMuti: 1
+      ShootSpeed: 0.5
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HalfAutoAmmo
+    - UniqueCode: _HighPressureNailGun
+      TheDescription: _HighPressureNailGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\HighPressureNailGu_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\HighPressureNailGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 1
+      IsLaserWeapon: 0
+      BackwardForce: 3
+      DamageMuti: 1.7
+      ShootSpeed: 0.7
+      MaxAmmoStack: 10
+      AmmoCode:
+      - _Nail
+    - UniqueCode: _NightShadowSMG
+      TheDescription: _NightShadowSMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\NightShadowSMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\NightShadowSubMachineGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1
+      DamageMuti: 1.5
+      ShootSpeed: 0.04
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HeavySMGAmmo
+    - UniqueCode: _TP96LMG
+      TheDescription: _TP96LMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\TP96LMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\TP96LMG.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.7
+      DamageMuti: 1.1
+      ShootSpeed: 0.11
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _Type2LMGAmmo
+    - UniqueCode: _QZ95AS
+      TheDescription: _QZ95AS_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\QZ95AS_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\QZ95AS.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 1.2
+      DamageMuti: 1.1
+      ShootSpeed: 0.07
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _AS416Ammo
+    - UniqueCode: _SimpleGrenadeLauncher
+      TheDescription: _SimpleGrenadeLauncher_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\SimpleGrenadeLauncher_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\SimpleGrenadeLauncher.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 4
+      DamageMuti: 0.95
+      ShootSpeed: 0.8
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _GrenadeLauncherAmmo
+    - UniqueCode: _StabilizedSMG
+      TheDescription: _StabilizedSMG_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\StabilizedSMG_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\StabilizedSMG.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0.6
+      DamageMuti: 0.85
+      ShootSpeed: 0.07
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _SubmachineGunAmmo
+    - UniqueCode: _HunterPistol
+      TheDescription: _HunterPistol_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\HunterPistol_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\HunterPistol.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 2
+      DamageMuti: 1.5
+      ShootSpeed: 0.8
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _HeavyPistolAmmo
+    - UniqueCode: _AH12ShotGun
+      TheDescription: _AH12ShotGun_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AH12ShotGun_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AH12ShotGun.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 1
+      EnableShell: 1
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 3
+      DamageMuti: 0.8
+      ShootSpeed: 0.6
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _ShotGunAmmo
+    - UniqueCode: _Chainsaw
+      TheDescription: _Chainsaw_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\MeleeWeapon\Chainsaw_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\MeleeWeapon\Chainsaw.prefab
+      Type: 2
+      HandleStyle: 2
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0
+      DamageMuti: 1
+      ShootSpeed: 0
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _BigFireJar
+    - UniqueCode: _Circularsaw
+      TheDescription: _Circularsaw_Des
+      TheSprite_Path: Assets\Resource\GameAssets\Weapon\MeleeWeapon\Circularsaw_Pre.png
+      ThePrefab_Path: Assets\Resource\Prefab\MeleeWeapon\Circularsaw.prefab
+      Type: 2
+      HandleStyle: 1
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs:
+      - TheCount: 0
+        TheSlotType: 1
+        TheItemData:
+          UniqueCode: 
+          TheDescription: 
+          TheSprite_Path: 
+          ThePrefab_Path: 
+          Type: 0
+          HandleStyle: 0
+          Stackable: 0
+          MaxStack: 1
+          InventoryObjs: []
+      IsAuto: 0
+      EnableShell: 0
+      EnableBullet: 0
+      IsLaserWeapon: 0
+      BackwardForce: 0
+      DamageMuti: 0.5
+      ShootSpeed: 0
+      MaxAmmoStack: 1
+      AmmoCode:
+      - _BigFireJar
+  MeleeWeapon:
+    AllMeleeWeapons:
+    - UniqueCode: _Crowbar
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 25
+      ChanceToBleed: 40
+      TimeForNextAttack: 1
+    - UniqueCode: _BaseBallBat
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 20
+      ChanceToBleed: 10
+      TimeForNextAttack: 1
+    - UniqueCode: _FireAxe
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 40
+      ChanceToBleed: 30
+      TimeForNextAttack: 1.5
+    - UniqueCode: _Axe
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 35
+      ChanceToBleed: 25
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Machete
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 30
+      ChanceToBleed: 10
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Hoe
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 25
+      ChanceToBleed: 15
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Pickaxe
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 40
+      ChanceToBleed: 10
+      TimeForNextAttack: 1.2
+    - UniqueCode: _FireHammer
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 30
+      ChanceToBleed: 10
+      TimeForNextAttack: 1.2
+    - UniqueCode: _LargeMachete
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 25
+      ChanceToBleed: 30
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Handsaw
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 15
+      ChanceToBleed: 50
+      TimeForNextAttack: 1.2
+    - UniqueCode: _SteelPipe
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 20
+      ChanceToBleed: 3
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Hammer
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 15
+      ChanceToBleed: 7
+      TimeForNextAttack: 1.2
+    - UniqueCode: _ExpandableBaton
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 35
+      ChanceToBleed: 5
+      TimeForNextAttack: 1.2
+    - UniqueCode: _KitchenKnife
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 22
+      ChanceToBleed: 30
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Baton
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 30
+      ChanceToBleed: 10
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Hatchet
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 32
+      ChanceToBleed: 35
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Shovel
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 22
+      ChanceToBleed: 10
+      TimeForNextAttack: 1.2
+    - UniqueCode: _Mace
+      TheDescription: 
+      TheSprite_Path: 
+      ThePrefab_Path: 
+      Type: 1
+      HandleStyle: 0
+      Stackable: 0
+      MaxStack: 1
+      InventoryObjs: []
+      Damage: 65
+      ChanceToBleed: 60
+      TimeForNextAttack: 1.2
+  AllType: 2
+  TheBasicData:
+    UniqueCode: _AS416
+    TheDescription: _AS416_Des
+    TheSprite_Path: Assets\Resource\GameAssets\Weapon\RangedWeapon\AS416_Pre.png
+    ThePrefab_Path: Assets\Resource\Prefab\WeaponAndMa\RangeWeapon\AS416.prefab
+    Type: 2
+    HandleStyle: 2
+    Stackable: 0
+    MaxStack: 1
+    InventoryObjs:
+    - TheCount: 0
+      TheSlotType: 1
+      TheItemData:
+        UniqueCode: 
+        TheDescription: 
+        TheSprite_Path: 
+        ThePrefab_Path: 
+        Type: 0
+        HandleStyle: 0
+        Stackable: 0
+        MaxStack: 1
+        InventoryObjs: []
+--- !u!82 &1387486923672620869
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 32fb52df4efcc1846bcbfef489af1cfc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 32fb52df4efcc1846bcbfef489af1cfc, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &495339297825099854
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e49e6ad8faad9e04895e4aa8bb891a01, type: 3}
+  m_Resource: {fileID: 8300000, guid: e49e6ad8faad9e04895e4aa8bb891a01, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5363091626667315185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27bb08e4250aa92469884cf0787755a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 15
+  EnableShell: 1
+  EnabelFlash: 1
+  IsMainHand: 1
+  IsHalfAuto: 0
+  EnableBullet: 0
+  IsLaserWeapon: 0
+  GetThisItem: {fileID: 0}
+  GunSound: {fileID: 1387486923672620869}
+  LightSound: {fileID: 495339297825099854}
+  ShootSound: {fileID: 8300000, guid: 32fb52df4efcc1846bcbfef489af1cfc, type: 3}
+  OutOfAmmo: {fileID: 8300000, guid: 69a6b3f57fda83d428ddc8916ad62870, type: 3}
+  TurnOnLightSound: {fileID: 8300000, guid: e49e6ad8faad9e04895e4aa8bb891a01, type: 3}
+  UniqueCode: _AS416
+  Shell: {fileID: 6589217389522776066, guid: 2aeb613464a75df4db820af16690e716, type: 3}
+  ShellRb: {fileID: 4504922067048301546, guid: 2aeb613464a75df4db820af16690e716, type: 3}
+  Bullet: {fileID: 0}
+  BulletRb: {fileID: 0}
+  ShootPos:
+  - {fileID: 1914727287362991776}
+  ChamberPos: {fileID: 3380425030272605565}
+  FireLight: {fileID: 2078873989328914543}
+  ChamberSpeed: 2
+  Watch: {fileID: 0}
+  IsForward: 0
+  FlashLight: {fileID: 1325141742645831842}
+  LightTurned: 0
+  FirePermision: 0
+  ThePickUp: {fileID: 0}
+  TheCamera: {fileID: 0}
+  BackWardForce: 1.3
+  TheGun: {fileID: 1050120499349820692}
+  RightHand: {fileID: 0}
+  LeftHand: {fileID: 0}
+  vect: {x: 0, y: 0}
+  ThePrefabs: {fileID: 0}
+  TheMatch: {fileID: 0}
+  TheItem: {fileID: 200135157357893162}
+  ThisItem:
+    UniqueCode: 
+    TheDescription: 
+    TheSprite_Path: 
+    ThePrefab_Path: 
+    Type: 0
+    HandleStyle: 0
+    Stackable: 0
+    MaxStack: 1
+    InventoryObjs: []
+    IsAuto: 0
+    EnableShell: 0
+    EnableBullet: 0
+    IsLaserWeapon: 0
+    BackwardForce: 0
+    DamageMuti: 0
+    ShootSpeed: 0
+    MaxAmmoStack: 0
+    AmmoCode: []
+  TheLaserLine: {fileID: 7014575159781033881, guid: 6cd543443757730448158f795e8b5170, type: 3}
+  EndFireLight: {fileID: 7593058252509893042, guid: 89264fba30fcafd4bb548206b0899d5f, type: 3}
+  BulletEffect: {fileID: 1863672338106760519, guid: c6dba7e78c2437c418a96a291fadb3ed, type: 3}
+  TheAdditionSlots: {fileID: 6340944752774781651}
+  ShootSpeed: 0.15
+  BulletSpeed: 0
+  ShootLayer:
+    serializedVersion: 2
+    m_Bits: 6153
+--- !u!114 &6340944752774781651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050120499349820692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e7a1ce29b5c014d8df21b8f0f28c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThePrefabList: {fileID: 0}
+  TheMagazineSlot: {fileID: 0}
+  MagazineFull: 0
+  UniqueCode: 
+  MaxAmmo: 0
+  RemainAmmo: 0
+  AccessorySlot: []
+  InventorySlot: []
+  TheUPanel: {fileID: 0}
+  ProperMagazine:
+  - _AS416Ammo
+  MaxStack: 0
+  StackableForMagazine: 0
+  TheBulletType: 0
+  BulletForce: 10
+  SoundManager: {fileID: 0}
+  ExplosionSound: {fileID: 0}
+  RingingSource: {fileID: 0}
+  ExplosionPrefab: {fileID: 0}
+  OriginOne: {fileID: 0}
+  TheMagazine: {fileID: 0}
+  TheEmptySprite: {fileID: -8527568592950175283, guid: 1dd1d4dca4afb694db8b41f2787d28d1, type: 3}
+--- !u!1 &1914727287362991776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4990103851133610885}
+  m_Layer: 7
+  m_Name: ShotPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4990103851133610885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914727287362991776}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.089, y: 0.441, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6345147157778565567}
+  - {fileID: 8345266162513525269}
+  m_Father: {fileID: 6360731066471544782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2988022067591665629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7996988217934697322}
+  - component: {fileID: 551947647810743521}
+  m_Layer: 7
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7996988217934697322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988022067591665629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.1377, y: -0.0047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6345147157778565567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &551947647810743521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988022067591665629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.415
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: ad6286b51dc1d9f30f5e7401000000002f3e11bc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 236.23
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &3207008867790222187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2596982425901944197}
+  - component: {fileID: 7483995117456816339}
+  m_Layer: 7
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2596982425901944197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207008867790222187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.1377, y: -0.0047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6345147157778565567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &7483995117456816339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207008867790222187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.415
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: ad6286b51dc1d9f30f5e7401000000002f3e11bc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 236.23
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &3380425030272605565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376024540175651518}
+  m_Layer: 7
+  m_Name: Chamber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376024540175651518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380425030272605565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.58779806, y: 0.47013432, z: -0.050811987}
+  m_LocalScale: {x: 5.3002567, y: 5.3002567, z: 5.3002567}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6360731066471544782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4185964837675161461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8345266162513525269}
+  - component: {fileID: 1325141742645831842}
+  m_Layer: 7
+  m_Name: GunFlashLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8345266162513525269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185964837675161461}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.928, y: 0.003, z: 0.37997836}
+  m_LocalScale: {x: 5.3002563, y: 5.3002563, z: 5.3002567}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4990103851133610885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1325141742645831842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185964837675161461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 8
+  m_LightVolumeIntensity: 0
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: ad6286b51dc1d9f30f5e7401000000002f3e11bc
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 1
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 1
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.849
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 11.922015
+  m_PointLightOuterAngle: 53.12
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 22.398823
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: 0.5295793, y: -0.13185596, z: -0.0000000010956}
+  - {x: 1.1918625, y: -0.28363988, z: -0.0000000010956}
+  - {x: 1.6299876, y: -0.3646154, z: -0.0000000010956}
+  - {x: 2.5122468, y: -0.4867522, z: -0.0000000010956}
+  - {x: 8.302548, y: -1.052801, z: -0.0000000010956}
+  - {x: 8.5191765, y: -0.9794885, z: -0.0000000010956}
+  - {x: 8.762674, y: -0.77628756, z: -0.0000000010956}
+  - {x: 8.935978, y: -0.5329971, z: -0.0000000010956}
+  - {x: 8.966121, y: -0.2709069, z: -0.0000000010956}
+  - {x: 8.961718, y: -0.010206937, z: -0.0000000010956}
+  - {x: 8.920656, y: 0.24535182, z: -0.0000000010956}
+  - {x: 8.854181, y: 0.50487465, z: -0.0000000010956}
+  - {x: 8.642716, y: 0.77763224, z: -0.0000000010956}
+  - {x: 8.3568535, y: 0.9637492, z: -0.0000000010956}
+  - {x: 2.5744965, y: 0.41040167, z: -0.0000000010956}
+  - {x: 1.567645, y: 0.29020116, z: -0.0000000010956}
+  - {x: 1.2294207, y: 0.24156709, z: -0.0000000010956}
+  - {x: 0.564561, y: 0.14006636, z: -0.0000000010956}
+  - {x: 0.02053551, y: -0.0009931765, z: -0.0000000010956}

@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 27bb08e4250aa92469884cf0787755a8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GetThisItem: {instanceID: 0}
+  - GunSound: {instanceID: 0}
+  - LightSound: {instanceID: 0}
+  - ShootSound: {instanceID: 0}
+  - OutOfAmmo: {instanceID: 0}
+  - TurnOnLightSound: {instanceID: 0}
+  - Bullet: {instanceID: 0}
+  - Shell: {fileID: 6589217389522776066, guid: 2aeb613464a75df4db820af16690e716, type: 3}
+  - BulletRb: {instanceID: 0}
+  - ShellRb: {fileID: 4504922067048301546, guid: 2aeb613464a75df4db820af16690e716, type: 3}
+  - ShootPos: {instanceID: 0}
+  - ChamberPos: {instanceID: 0}
+  - FireLight: {instanceID: 0}
+  - Watch: {instanceID: 0}
+  - FlashLight: {instanceID: 0}
+  - ThePickUp: {instanceID: 0}
+  - TheCamera: {instanceID: 0}
+  - TheGun: {instanceID: 0}
+  - RightHand: {instanceID: 0}
+  - LeftHand: {instanceID: 0}
+  - ThePrefabs: {instanceID: 0}
+  - TheMatch: {instanceID: 0}
+  - TheItem: {instanceID: 0}
+  - TheLaserLine: {fileID: 7014575159781033881, guid: 6cd543443757730448158f795e8b5170, type: 3}
+  - EndFireLight: {fileID: 7593058252509893042, guid: 89264fba30fcafd4bb548206b0899d5f, type: 3}
+  - BulletEffect: {fileID: 1863672338106760519, guid: c6dba7e78c2437c418a96a291fadb3ed, type: 3}
+  - TheAdditionSlots: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

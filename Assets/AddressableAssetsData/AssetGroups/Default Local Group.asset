@@ -1,0 +1,660 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f28ddac6fd48a2a42ac73a0a72b29732
+  m_SerializeEntries:
+  - m_GUID: 9ba10ec71385de1478588d30e1bbbc9a
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/HunterPistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8365a8f9d7c8a2e428d99edf4f1596b3
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/pistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5bf3b331df0c7d4d87b23e579e02be4
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AH12ShotGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d48dcfc82912bd4e8fdd129fc346fa2
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AirGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 737065c184d110147a4749ba0ca86950
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AntiTankSR.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a16cb7dfcd6a5f44a170ef507a5207f
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AS416.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea1925ca849a58d4db921040a5476d1e
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AutoPistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ac0213398e1a714ea4b1632935a47e1
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/AWMSR.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e5aa1a43d4e1b04a84f0561655f8a7e
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/BattleFlareGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc2b03894867669449b3e2e257dda743
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/C98Pistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ead85500dd6d48442ae229661cb3f1c4
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/GrenadeLauncher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dc4e6773ab41b247be3c4591c0e0b8c
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/H1894Rifle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 215c25d9463dfa544b2886c9e7dce126
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/HalfAutoRifle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57bc2eab79ce5244296662835551f641
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/HighPressureNailGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 923aac3198f4ec74eb2c11d73315d6e7
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/HP9ShotGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae19754d38491f34ab82ea7a7b653c9b
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/LaserAssaultRifle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f12f92d869845b409af5c49f4e0c274
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/LaserCannon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 619afcc05325f5543bc3b8ec4b27c666
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/LaserPistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28964b9e5d814164aa5979abd614e546
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/LS416.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46b49d3288e868c4585400568659cf88
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/M414ShotGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28d95853162f0ad46b9d8890c2e025d2
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/MK1907.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fca556e850eb7942b5938fa09056fc4
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/MK1941LMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a35b1587f8c8c2498fa801e225b3082
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/MultiAssaultRifle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5acbaf28c97e19499bd34d9d4306347
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/NailGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 703809377f24f5942821e85eda11d8d5
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/NightShadowSubMachineGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fb9de0a128a4ed4589dfd2b4216c5c8
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/QZ95AS.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82f226bd18ea8034f89ce9b2af1971f7
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/Revolver.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d84cd2a51a8534499d958bbd9781971
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/S10ShotGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9acc7cb81b7fa954588e48e47f0ac3e8
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/SimpleGrenadeLauncher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b76e62c9654d9f84cbd4a54b57817b4e
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/StabilizedSMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e60d453a2e97c9c4293b7761af8958f7
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TheHunter.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f0826d47d1d6b146b6099d5373d1474
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP2BR.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28873aee706467b45a314991bd1a599d
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP2MR.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfe6b82ff586df84bb9f81601370e0b7
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP2Revolver.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9026690a8d4d5d48ab7e8ca3e1c31fe
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP28AssaultPistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fca1efed63a494a47b1649de9d1e3627
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP96LMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 975dea1a257e6374ea5a05a48ef0a286
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/TP249LMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48457536b8e3d4e4aa2d00f4d9e9ebc1
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/UMG45SMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 819ec10cb924c7f4babb2787433c92d8
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/RangeWeapon/UZISMG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0530fc7412565664db7fc0bda6ab992c
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/AirGunMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31a42fce0e058cb4cb0f930fa98be77c
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/AS416_Magazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1344b2ca6f6648b4d8818bfcc37fee62
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/ExtendedPistolMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eb267dc3dec4ad4c908903c748e56ad
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/FireJar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 478b9dad6976be74b8097fb5ef0316e9
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/GrenadeLauncherAmmo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6a7651dbd7245840995abe068cb6d6d
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/HalfAutoMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85eaaa998cbf239498600354a34749c9
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/HeavyPistolMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 891cd9e1857381f4087683e51121ee12
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/HeavySMGMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2316f1c315f81549b29116c84f1d816
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/HighVelocityRifleAmmo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd915063c7ec793449ac13299a803b92
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/LaserCannonMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23e32359ec100b34fa7ac2f5f0276f0c
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/LaserPistolMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2ac40babe9caaa4c9fa78fdd26bab9d
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/LAssaultRifleMagzine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e23c5fd252c3d554ead612cfe6bf7a88
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/LMGMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eb164fb023914f4e9d2242f3d104751
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/MK1907_Magazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4bf4efba4bf5834eb44c78acd66a28b
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/MultiAssaultRifleMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1dd96ccdea9d4d4b8c3876af7882153
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/Nail.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef105ac2d02479a4598bc895f44c1612
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/NormalPistolMagazine 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d28a7dfbd0da924fbd18df414cf53da
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/NormalShotGunAmmo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bffcba3caf7314e49a7796675813b745
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/RevolverAmmo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7daf68046a70b8468591dbe31d7bdc3
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/ShotGunMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b692c100b4140e84c8c7ab1cbc806287
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/SignalFlare.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e562a08e106ceb54889d9e0a1f6528c8
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/SniperMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 786029c48ba93fa4498f0642c19107f7
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/SubmachineMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd51a52d6a4e563448b7e5931116c32b
+    m_Address: Assets/Resource/Prefab/WeaponAndMa/Magazine/Type2LMGMagazine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b90fc659055a4ff48b4d03b38bdc3f05
+    m_Address: Assets/Resource/Prefab/Cloth/Armor/SimpleArmor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e43439142651c34429b433ef62b149d5
+    m_Address: Assets/Resource/Prefab/Cloth/Helmet/ChemSuitHelmet Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91888958d0e7a5f4cb04a235109b21e8
+    m_Address: Assets/Resource/Prefab/Cloth/Helmet/MaskHelmet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc06b0165481d0f479242be8b62cd8ad
+    m_Address: Assets/Resource/Prefab/Cloth/Helmet/MotorcycleHelmet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f69e0cc15ff005d428e0cc3b455bf3d6
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/BlackPleatedSkirt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49c9c78e6b12afd47a0f88c136485856
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/CamoLower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b527f1a82e3f8d44e87b9c2fb06e2d64
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/ChemSuitLower_Grey.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1f2c2a37e2d811468361cbc3d564bbb
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/CottonTrouser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67912af917bfdd34ba309c96c3d5635d
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/FirefightingSuitLower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61eb8aaf52c147f4697b41d775049b8a
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/ForestRangerLower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71dadb6a44df088479b3fb0cb6319b24
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/FormalSuitLower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac589668a693c6c49a5f92123dd1f1ad
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/GreenShorts.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a8b9fb44eadc934f9c5f2f3051ea4b4
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/GreyTrouser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5541a541b71e4740bf6891473c06a81
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/Jeans.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aba4f5fab3a7a754c9ed3c69dada6e15
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/PoliceUniformLower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55d90695c9a2c7e499f5b6c48d4f670f
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/WhiteTrouser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 323516c047f35db40b326c05b02a42d3
+    m_Address: Assets/Resource/Prefab/Cloth/Lower/YellowShorts.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 242da29f178c0be40b1ed30114146982
+    m_Address: Assets/Resource/Prefab/Cloth/Shoes/BlackCanvasShoes.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b54d6189fd45c447aa69ff744ca6304
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/BlackStocking_Mid.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c06e222d6cbd604b8214d9fce619fa3
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/BlackStocking_Thick.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f1e5c27aff477e4bba52da781d7b436
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/BlackStocking_Thin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 00131d3a5d16eab47b70c58970923c11
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/GreyShortSocks.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b01b1be92d45663488b295f7787a3621
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/RedShortSocks.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12e72edbbacccf348a6f873e9e92a934
+    m_Address: Assets/Resource/Prefab/Cloth/Socks/WhiteShortSocks.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 435c680cf7c81154f84200ebef2bce35
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/BlackSailorSuit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48bad050386095c469cd853fa6169284
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/BlueShirt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eca2397fde322c48be8a0af035ffca7
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/CamoUpper.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 667a187d5d3db23409afb33741b7ee83
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/ChemSuitUpper_Grey.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26d6bf159ac29e34b8e87580b5a002aa
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/DownCoat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cccc7961e98d9b44388654cff5de7067
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/FirefightingJacket.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 348512002a339514a87cf34f95695e9a
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/ForestRangerUpper.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 034cd30d708e5be48817f8ce017ee5f4
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/FormalSuitUpper.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b7da167adf401f49bbddcdbf8205138
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/GreenStripedJacket.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee8d22fab4a217245abc4e421ddb752a
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/GreyShirt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a804b7448b296ba4895c1df61a7a06ed
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/GreyWoolenSweater.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15a8f9bf67ece2846b4c17f70a1345d1
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/MedicalCoat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16d6f772d2d8ae54ab94107541c7761d
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/PoliceUniformUpper.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27b87128c33ea9843b20a4b739c7569d
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/RedLeatherJacket.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56ba8290f6c333648ae4fe72fa82f345
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/RedShirt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0937c20e4a904624ba5bd444c02d4f58
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/RedWoolenSweater.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40c44f457a60cbe4b85df9530386e2e3
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/SailorSuit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28346d4d666d9634288ef1f17ea150de
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/YellowLeatherJacket.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 202ae6145eaea05478c54f84763e2d09
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/YellowSweater.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 419e3333f808ba245aebdf3ffb5d6064
+    m_Address: Assets/Resource/Prefab/Cloth/Upper/YellowWoolenSweater.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 217f2d2afeccbc1479ce10757235ee66
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Chainsaw.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96e72b02d77c0de4692365a401f90b76
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Circularsaw.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6853b871cf36db140a37c34fb6763ae7
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Axe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13f0d4f5a7bf89e4098c363d957a8ddb
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/BaseBallBat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ab8d5dc6eebe254390619ac17de17c9
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Baton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39757c40278f9014fbfa2438d72a940a
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Crowbar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd295c7ac340c5e4aa2c7496ea706e0b
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/ExpandableBaton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e5d0f87f8f1e1b4c91682fd8701600e
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/FireAxe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c917e4d120f6ec8418dcc0d3728edd28
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/FireHammer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a399d292c47b52a4faa1763addf39dd2
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Hammer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4182a672ff65b942bde3efa136a830b
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Handsaw.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80e9b6b51c68fed49b01d68f2074d3fc
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Hatchet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb8947c7653a4884ab947ba95347e2ef
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Hoe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5963bed7471d94f4b8d31de1c2788bc4
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/KitchenKnife.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf045004583138d40bb23e0fb09ead73
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/LargeMachete.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6209428e5af9fd548ac85ff55b678166
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Mace.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 345742ea0ff8e3843ab2d665ad9b3cfa
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Machete.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cc0bc87ef1ce084e8b49c07f0bfade1
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Pickaxe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8d963b00b22eab4dbbc165134993ac6
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/Shovel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1221e6b10d1b7474aae19154a1aab993
+    m_Address: Assets/Resource/Prefab/MeleeWeapon/SteelPipe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 74eaae9117ddfa84ab83904ad8db288c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 87974bc6de3857f4683966907c5274dc, type: 2}
+    - {fileID: 11400000, guid: d167965a531b2584b87c1af81b3ca475, type: 2}
