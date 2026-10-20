@@ -82,19 +82,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5b00a7de0ddb01248a3ad80a9c634599, type: 2}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -6.6285253
+      value: -6.1399307
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[0].y
-      value: -3.791832
+      value: -3.581611
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -3.1691515
+      value: -9.779753
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: -4.0554237
+      value: -2.3163197
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value

@@ -186,8 +186,10 @@ public class CameraMove : MonoBehaviour
     {
         Watch.TheMouseCorodinate = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+
         MoveBackGround(Front, ref CurrentFront);
-        MoveBackGround(Back,ref CurrentBack);
+        MoveBackGround(Back, ref CurrentBack);
+
     }
 
     public void MoveBackGround(LinkedList<SpriteRenderer> TheList,ref SpriteRenderer Current)

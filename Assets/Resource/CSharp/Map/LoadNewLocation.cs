@@ -18,16 +18,24 @@ public class LoadNewLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Interact"))
+        {
+            TheDoNotDestroy.LoadSceneAsync(SceneName);
+
+
+        }
     }
 
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (Input.GetButtonDown("Interact") && collision.gameObject.tag == "Player")
         {
             TheDoNotDestroy.LoadSceneAsync(SceneName);
+
+
         }
     }
 }
