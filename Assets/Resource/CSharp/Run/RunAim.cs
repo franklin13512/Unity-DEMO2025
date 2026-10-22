@@ -1,4 +1,3 @@
-
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -203,16 +202,6 @@ public class RunAim : MonoBehaviour
 
         }
 
-        //if (ColdTime0 > 0)
-        //{
-        //    ColdTime0 -= Time.deltaTime;
-        //}
-
-        //if (ColdTime1 > 0)
-        //{
-        //    ColdTime1 -= Time.deltaTime;
-        //}
-
     }
 
 
@@ -256,25 +245,12 @@ public class RunAim : MonoBehaviour
     //public float ColdTime1 = 0f;
     //public float MaxTime = 0.5f;
 
+    /// <summary>
+    /// 静止时的处理。脚的摆放已统一交给 ProceduralIKWalker，
+    /// 这里只负责维护“离地高度 / 是否在地面”的判断，不再移动 legs。
+    /// </summary>
     public void KeepStand_IK()
     {
-
-
-
-        float DistanceIk1 = Mathf.Sqrt(Mathf.Pow((legs[0].position.x - IkPoints[0].position.x), 2) + Mathf.Pow((legs[0].position.y - IkPoints[0].position.y), 2));
-        float DistanceIk2 = Mathf.Sqrt(Mathf.Pow((legs[1].position.x - IkPoints[1].position.x), 2) + Mathf.Pow((legs[1].position.y - IkPoints[1].position.y), 2));
-
-        if (DistanceIk1 > 0.1f && TheHealth.Health > 0 )
-        {
-            if(!TheStatus.IsCollapse)
-                legs[0].position = IkPoints[0].position;
-        }
-        if (DistanceIk2 > 0.1f && TheHealth.Health > 0 )
-        {
-            if (!TheStatus.IsCollapse)
-                legs[1].position = IkPoints[1].position;
-        }
-
         if (Hight > 0.73f || Hight < 0)
         {
             OntheGround = false;
@@ -283,61 +259,6 @@ public class RunAim : MonoBehaviour
         {
             OntheGround = true;
         }
-
-        float StepBetween = Mathf.Abs(legs[0].position.x - legs[1].position.x);
-        float StepDistance1 = raycastY.position.x - legs[0].position.x; 
-        float StepDistance2 = raycastY.position.x - legs[1].position.x;
-
-        if ((StepDistance1 < 0f && StepDistance2 > 0f) || (StepDistance1 > 0f && StepDistance2 < 0f)) return;
-
-        int footToMove = 0;
-
-
-        int Direction = 0;
-        if (StepDistance1 < 0 && StepDistance2 < 0)
-        {
-            Direction = -1;
-        }
-        else if (StepDistance1 > 0 && StepDistance2 > 0)
-        {
-            Direction = 1;
-        }
-
-        if (Mathf.Abs(StepDistance1) > Mathf.Abs(StepDistance2))
-        {
-            footToMove = 0;
-        }
-        else
-        {
-            footToMove = 1;
-        }
-
-        //if (StepBetween > 0.01f)
-        //{
-            Vector2 rayOrigin = legs[footToMove].position + new Vector3(Mathf.Abs(transform.position.x) * 0.6f * Direction, 0, 0);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, 1f);
-
-            if (hit.collider != null)
-            {
-                Vector2 targetPos = hit.point;
-                legs[footToMove].position = Vector2.MoveTowards(
-                legs[footToMove].position,
-                targetPos,
-                Time.deltaTime * 5f
-                                                                            );
-            }
-        //}
-
-
-        if (Hight <= 0.75f)
-        {
-            legs[footToMove].position = Vector2.MoveTowards(
-            legs[footToMove].position,
-            raycastY.position,
-            Time.deltaTime * 5f
-                                                                            );
-        }
-
     }
 
 }

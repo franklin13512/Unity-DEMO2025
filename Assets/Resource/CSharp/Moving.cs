@@ -14,8 +14,9 @@ public class Moving : MonoBehaviour
     public float RunSpeed;
     public float WalkSpeed;
     public float WalkBackSpeed;
+    public float CrouchSpeed; // 下蹲行走速度（<=0 时自动取 WalkSpeed*0.6）
 
-    public float StandingForce; //��ǹʱ�˻�ǰ�㣬����趨һ����΢������
+    public float StandingForce; // 端枪时人会前倾，这里设定一个微小的力
 
     public WatchMouse Watch;
     public bool IsForward;
@@ -36,6 +37,9 @@ public class Moving : MonoBehaviour
     {
         IsForward = Watch.IsTurned;
 
+        bool crouching = Input.GetKey(KeyCode.LeftControl);
+        float crouchSpeed = CrouchSpeed > 0f ? CrouchSpeed : WalkSpeed * 0.6f;
+
         //if (MoveValue == 0 && MoveValueOP == 0 && TheRunAim.OntheGround == true && Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         //{
         //    Rb.velocity = new Vector2(0,0);
@@ -49,19 +53,24 @@ public class Moving : MonoBehaviour
         {
             MoveValue = Input.GetAxis("Horizontal");
 
-            if (MoveValue > 0 && Input.GetKey(KeyCode.LeftShift))
+            if (crouching)
+            {
+                if (MoveValue != 0)
+                    Rb.velocity = new Vector2(MoveValue * crouchSpeed, Rb.velocity.y);
+            }
+            else if (MoveValue > 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 Rb.velocity = new Vector2(MoveValue * RunSpeed, Rb.velocity.y);
-            }else if (MoveValue < 0 && Input.GetKey(KeyCode.LeftShift))
+            }
+            else if (MoveValue < 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 Rb.velocity = new Vector2(MoveValue * WalkBackSpeed, Rb.velocity.y);
             }
-
-            if (MoveValue > 0 && !Input.GetKey(KeyCode.LeftShift))
+            else if (MoveValue > 0)
             {
                 Rb.velocity = new Vector2(MoveValue * WalkSpeed, Rb.velocity.y);
             }
-            else if (MoveValue < 0 && !Input.GetKey(KeyCode.LeftShift))
+            else if (MoveValue < 0)
             {
                 Rb.velocity = new Vector2(MoveValue * WalkBackSpeed, Rb.velocity.y);
             }
@@ -71,7 +80,12 @@ public class Moving : MonoBehaviour
         {
             MoveValueOP = Input.GetAxis("HorizontalOP");
 
-            if (MoveValueOP > 0 && Input.GetKey(KeyCode.LeftShift))
+            if (crouching)
+            {
+                if (MoveValueOP != 0)
+                    Rb.velocity = new Vector2(MoveValueOP * -crouchSpeed, Rb.velocity.y);
+            }
+            else if (MoveValueOP > 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 Rb.velocity = new Vector2(MoveValueOP * -RunSpeed, Rb.velocity.y);
             }
@@ -79,12 +93,11 @@ public class Moving : MonoBehaviour
             {
                 Rb.velocity = new Vector2(MoveValueOP * -WalkBackSpeed, Rb.velocity.y);
             }
-
-            if (MoveValueOP > 0 && !Input.GetKey(KeyCode.LeftShift))
+            else if (MoveValueOP > 0)
             {
                 Rb.velocity = new Vector2(MoveValueOP * -WalkSpeed, Rb.velocity.y);
             }
-            else if (MoveValueOP < 0 && !Input.GetKey(KeyCode.LeftShift))
+            else if (MoveValueOP < 0)
             {
                 Rb.velocity = new Vector2(MoveValueOP * -WalkBackSpeed, Rb.velocity.y);
             }
