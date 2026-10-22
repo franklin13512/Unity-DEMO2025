@@ -75,6 +75,8 @@ public class ProceduralIKWalker : MonoBehaviour
     public float walkStepLift = 0.12f;
     [Tooltip("走路时落脚点沿移动方向的前移量（越大腿伸得越前）")]
     public float walkFootForward = 0.05f;
+    [Tooltip("走路的迈步间隔（身体移动多少距离迈一步，越小步子越频繁）")]
+    public float walkStepInterval = 0.3f;
 
     [Header("跑步参数")]
     public float runStride = 0.45f;      // 跑步单步距离（更大）
@@ -82,6 +84,8 @@ public class ProceduralIKWalker : MonoBehaviour
     public float runStepLift = 0.22f;
     [Tooltip("跑步时落脚点沿移动方向的前移量（越大腿伸得越前）")]
     public float runFootForward = 0.15f;
+    [Tooltip("跑步的迈步间隔（身体移动多少距离迈一步，越小步子越频繁）")]
+    public float runStepInterval = 0.5f;
     [Tooltip("身体水平速度超过此值时自动判定为跑步（AI 等无按键输入时使用）")]
     public float runSpeedThreshold = 4f;
     [Tooltip("迈步落点的前倾系数（0~1），越大落点越靠前")]
@@ -111,6 +115,8 @@ public class ProceduralIKWalker : MonoBehaviour
     public float idleSpeedThreshold = 0.1f;
     [Tooltip("站立时每只脚离身体中线的距离（越小两脚越并拢，越接近“回到人物下方”）")]
     public float idleFootSpacing = 0.04f;
+    [Tooltip("起步前几步的间隔倍率（<1 更快，用于让脚快速跟上身体）")]
+    public float fastStartMul = 0.5f;
 
     // ---- 对外状态 ----
     public LocomotionState State { get; private set; }
@@ -123,6 +129,12 @@ public class ProceduralIKWalker : MonoBehaviour
     private float appliedCrouchDrop = 0f;
     private Vector3[] crouchBasePositions;
     private bool crouchBaseCaptured = false;
+
+    // 步态时钟 / 交替状态
+    private float stepClock = 0f;
+    private int lastStepIndex = -1;
+    private int fastStartSteps = 0;
+    private bool wasIdle = true;
 
     void Start()
     {
@@ -196,6 +208,14 @@ public class ProceduralIKWalker : MonoBehaviour
         return s;
     }
 
+    // 每步间隔距离（身体移动多远迈一步）
+    float CurrentStepInterval()
+    {
+        float v = (State == LocomotionState.Run) ? runStepInterval : walkStepInterval;
+        if (IsCrouching) v *= crouchStrideMul;
+        return Mathf.Max(0.01f, v);
+    }
+
     float CurrentStepDuration()
     {
         float d = (State == LocomotionState.Run) ? runStepDuration : walkStepDuration;
@@ -223,6 +243,8 @@ public class ProceduralIKWalker : MonoBehaviour
 
         if (State == LocomotionState.Idle)
         {
+            wasIdle = true;
+
             // 静止：双脚平滑回到身体下方并贴地（保持站立）
             for (int i = 0; i < legs.Count; i++)
             {
@@ -243,28 +265,56 @@ public class ProceduralIKWalker : MonoBehaviour
             return;
         }
 
+        // 从静止进入移动：立即迈第一步，并让接下来两步加快
+        if (wasIdle)
+        {
+            wasIdle = false;
+            stepClock = CurrentStepInterval();
+            fastStartSteps = 2;
+            lastStepIndex = -1;
+        }
+
+        // 步态时钟：按身体水平移动距离累加
+        float vx = bodyRb != null ? bodyRb.velocity.x : 0f;
+        stepClock += Mathf.Abs(vx) * Time.deltaTime;
+
         int lifting = 0;
         foreach (var leg in legs)
             if (leg != null && leg.stepping) lifting++;
 
-        // 挑出在运动方向上落后最远、且需要迈步的脚
-        Leg best = null;
-        float bestTrail = 0f;
-        foreach (var leg in legs)
-        {
-            if (leg == null || leg.foot == null || leg.stepping) continue;
+        float interval = CurrentStepInterval();
+        if (fastStartSteps > 0) interval *= fastStartMul;
 
-            float baseX = bodyTransform != null ? bodyTransform.position.x : transform.position.x;
-            float trail = MoveDir * (baseX - leg.foot.position.x); // >0 表示脚落在身体后方
-            if (trail > CurrentStride() && trail > bestTrail)
+        if (stepClock >= interval && lifting < EffectiveMaxLiftingLegs())
+        {
+            // 强制交替：从上一次迈步的腿之后开始找
+            Leg pick = null;
+            int pickIndex = -1;
+            int n = legs.Count;
+            for (int k = 1; k <= n; k++)
             {
-                best = leg;
-                bestTrail = trail;
+                int idx = (lastStepIndex + k) % n;
+                var leg = legs[idx];
+                if (leg != null && leg.foot != null && !leg.stepping)
+                {
+                    pick = leg;
+                    pickIndex = idx;
+                    break;
+                }
+            }
+
+            if (pick != null)
+            {
+                StartStep(pick);
+
+                if (pick.stepping)
+                {
+                    stepClock = 0f;
+                    lastStepIndex = pickIndex;
+                    if (fastStartSteps > 0) fastStartSteps--;
+                }
             }
         }
-
-        if (best != null && lifting < EffectiveMaxLiftingLegs())
-            StartStep(best);
 
         // 更新正在迈步的脚
         foreach (var leg in legs)

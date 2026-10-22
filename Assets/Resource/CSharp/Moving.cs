@@ -8,6 +8,7 @@ public class Moving : MonoBehaviour
     public Rigidbody2D Rb;
     private float MoveValue;
     private float MoveValueOP;
+    private float currentVx = 0f;
 
     //public RunAim TheRunAim;
 
@@ -17,6 +18,8 @@ public class Moving : MonoBehaviour
     public float CrouchSpeed; // 下蹲行走速度（<=0 时自动取 WalkSpeed*0.6）
     [Tooltip("下蹲功能总开关（与 ProceduralIKWalker.enableCrouch 保持一致）")]
     public bool enableCrouch = true;
+    [Tooltip("身体水平速度的加速度（越大起步越快；调小可让起步更缓、腿更容易跟上）")]
+    public float accel = 8f;
 
     public float StandingForce; // 端枪时人会前倾，这里设定一个微小的力
 
@@ -72,6 +75,7 @@ public class Moving : MonoBehaviour
         // 没有输入就不改变速度（保持原行为，让摩擦把身体停下）
         if (Mathf.Abs(axis) <= 0.01f)
         {
+            currentVx = Rb != null ? Rb.velocity.x : 0f; // 跟随实际速度，重新起步时从当前速度开始
             currentSlope = Mathf.Lerp(currentSlope, 0f, Time.deltaTime * slopeSmooth);
             return;
         }
@@ -83,7 +87,11 @@ public class Moving : MonoBehaviour
         else speed = WalkBackSpeed;
 
         // 朝向决定水平方向（转身时速度反向）
-        float vx = axis * speed * ((IsForward == false) ? 1f : -1f);
+        float targetVx = axis * speed * ((IsForward == false) ? 1f : -1f);
+
+        // 加速斜坡：水平速度平滑逼近目标（让腿有时间跟上，避免起步掉下去）
+        currentVx = Mathf.MoveTowards(currentVx, targetVx, accel * Time.deltaTime);
+        float vx = currentVx;
 
         // 采样脚下坡度，并让身体沿坡面移动
         bool onGround;
