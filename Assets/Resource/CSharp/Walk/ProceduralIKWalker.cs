@@ -90,9 +90,13 @@ public class ProceduralIKWalker : MonoBehaviour
     public float crouchStrideMul = 0.6f;      // 下蹲步幅系数
     public float crouchLiftMul = 0.6f;        // 下蹲抬腿高度系数
     public float crouchStepDurationMul = 1.2f;// 下蹲节奏系数
-    [Tooltip("下蹲时向下移动的身体锚点（如脊椎骨），可选；留空则只影响步态")]
+    [Tooltip("下蹲时一起向下移动的部件（头/双臂/躯干等），按同一个世界偏移下移")]
+    public List<Transform> crouchParts = new List<Transform>();
+    public float crouchBodyDrop = 0.3f;       // 下蹲下移量（世界单位）
+    [Tooltip("下蹲姿势的平滑速度")]
+    public float crouchPoseSpeed = 8f;
+    [Tooltip("旧方式：只降脊椎骨（留空则不用；建议用 crouchParts 代替）")]
     public Transform crouchAnchor;
-    public float crouchBodyDrop = 0.12f;      // 下蹲时锚点下移量（本地 Y）
 
     [Header("步态")]
     [Tooltip("同时最多抬起的腿数，-1 表示自动（腿数/2，至少 1，保证始终有腿着地）")]
@@ -110,6 +114,9 @@ public class ProceduralIKWalker : MonoBehaviour
 
     private Vector3 crouchAnchorBaseLocal;
     private bool crouchAnchorInited;
+    private float appliedCrouchDrop = 0f;
+    private Vector3[] crouchBasePositions;
+    private bool crouchBaseCaptured = false;
 
     void Start()
     {
@@ -350,11 +357,68 @@ public class ProceduralIKWalker : MonoBehaviour
     // ---- 下蹲姿势 ----
     void UpdateCrouchPose()
     {
-        if (crouchAnchor == null || !crouchAnchorInited) return;
-        Vector3 target = crouchAnchorBaseLocal;
-        if (IsCrouching)
-            target += Vector3.down * crouchBodyDrop;
-        crouchAnchor.localPosition = Vector3.Lerp(crouchAnchor.localPosition, target, Time.deltaTime * 8f);
+        if (crouchParts == null || crouchParts.Count == 0)
+        {
+            // 兼容旧方式：只降脊椎骨（局部坐标）
+            if (crouchAnchor != null && crouchAnchorInited)
+            {
+                float anchorTarget = IsCrouching ? crouchBodyDrop : 0f;
+                float anchorDrop = Mathf.Lerp(appliedCrouchDrop, anchorTarget, Time.deltaTime * crouchPoseSpeed);
+                float anchorDelta = anchorDrop - appliedCrouchDrop;
+                crouchAnchor.localPosition = crouchAnchor.localPosition + new Vector3(0f, -anchorDelta, 0f);
+                appliedCrouchDrop = anchorDrop;
+            }
+            return;
+        }
+
+        if (crouchBasePositions == null || crouchBasePositions.Length != crouchParts.Count)
+        {
+            crouchBasePositions = new Vector3[crouchParts.Count];
+            crouchBaseCaptured = false;
+        }
+
+        float targetDrop = IsCrouching ? crouchBodyDrop : 0f;
+        float newDrop = Mathf.Lerp(appliedCrouchDrop, targetDrop, Time.deltaTime * crouchPoseSpeed);
+
+        // 没在蹲、且已经完全站起：持续记录“站立基准”，供下次下蹲使用
+        if (!IsCrouching && appliedCrouchDrop <= 0.00001f)
+        {
+            for (int i = 0; i < crouchParts.Count; i++)
+                if (crouchParts[i] != null)
+                    crouchBasePositions[i] = crouchParts[i].position;
+
+            crouchBaseCaptured = true;
+            appliedCrouchDrop = 0f;
+            return;
+        }
+
+        // 开始下蹲时捕获一次站立基准
+        if (!crouchBaseCaptured)
+        {
+            for (int i = 0; i < crouchParts.Count; i++)
+                if (crouchParts[i] != null)
+                    crouchBasePositions[i] = crouchParts[i].position;
+
+            crouchBaseCaptured = true;
+        }
+
+        // 每帧绝对施加：Y = 基准Y - 下移量；X/Z 保留物理值（蹲走交给物理）
+        for (int i = 0; i < crouchParts.Count; i++)
+        {
+            Transform part = crouchParts[i];
+            if (part == null) continue;
+
+            Vector3 p = part.position;
+            float targetY = crouchBasePositions[i].y - newDrop;
+
+            Rigidbody2D partRb = part.GetComponent<Rigidbody2D>();
+            if (partRb != null)
+                partRb.position = new Vector2(p.x, targetY);
+            else
+                part.position = new Vector3(p.x, targetY, p.z);
+        }
+
+        appliedCrouchDrop = newDrop;
     }
 
     /// <summary>
