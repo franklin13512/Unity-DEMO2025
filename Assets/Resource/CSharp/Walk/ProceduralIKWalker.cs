@@ -73,17 +73,23 @@ public class ProceduralIKWalker : MonoBehaviour
     public float walkStride = 0.25f;     // 走路单步距离（越大迈得越远）
     public float walkStepDuration = 0.22f;
     public float walkStepLift = 0.12f;
+    [Tooltip("走路时落脚点沿移动方向的前移量（越大腿伸得越前）")]
+    public float walkFootForward = 0.05f;
 
     [Header("跑步参数")]
     public float runStride = 0.45f;      // 跑步单步距离（更大）
     public float runStepDuration = 0.16f;
     public float runStepLift = 0.22f;
+    [Tooltip("跑步时落脚点沿移动方向的前移量（越大腿伸得越前）")]
+    public float runFootForward = 0.15f;
     [Tooltip("身体水平速度超过此值时自动判定为跑步（AI 等无按键输入时使用）")]
     public float runSpeedThreshold = 4f;
     [Tooltip("迈步落点的前倾系数（0~1），越大落点越靠前")]
     public float overshootFactor = 0.5f;
 
     [Header("下蹲参数")]
+    [Tooltip("下蹲功能总开关（关闭后完全不读按键、不改变姿势）")]
+    public bool enableCrouch = true;
     public KeyCode crouchKey = KeyCode.LeftControl;
     [Tooltip("true=按住下蹲，松开站起")]
     public bool holdToCrouch = true;
@@ -155,11 +161,10 @@ public class ProceduralIKWalker : MonoBehaviour
     // ---- 状态输入 ----
     void UpdateStateInput()
     {
-        if (isPlayer)
-        {
-            if (holdToCrouch)
-                IsCrouching = Input.GetKey(crouchKey);
-        }
+        if (isPlayer && enableCrouch && holdToCrouch)
+            IsCrouching = Input.GetKey(crouchKey);
+        else
+            IsCrouching = false;
 
         float speed = bodyRb != null ? Mathf.Abs(bodyRb.velocity.x) : 0f;
 
@@ -286,9 +291,10 @@ public class ProceduralIKWalker : MonoBehaviour
 
         // 落点：身体前方半个单步距离 + 速度前倾（让脚甩到身体前面，形成交替）
         float duration = CurrentStepDuration();
+        float forward = (State == LocomotionState.Run) ? runFootForward : walkFootForward;
         float overshoot = (bodyRb != null ? bodyRb.velocity.x : 0f) * duration * overshootFactor;
         Vector3 target = new Vector3(
-            baseX + MoveDir * CurrentStride() * 0.5f + overshoot,
+            baseX + MoveDir * (CurrentStride() * 0.5f + forward) + overshoot,
             baseY + leg.restOffset.y,
             0f);
 
@@ -426,6 +432,7 @@ public class ProceduralIKWalker : MonoBehaviour
     /// </summary>
     public void SetCrouch(bool crouch)
     {
+        if (!enableCrouch) { IsCrouching = false; return; }
         if (isPlayer) return;
         IsCrouching = crouch;
     }

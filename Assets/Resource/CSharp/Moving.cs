@@ -15,6 +15,8 @@ public class Moving : MonoBehaviour
     public float WalkSpeed;
     public float WalkBackSpeed;
     public float CrouchSpeed; // 下蹲行走速度（<=0 时自动取 WalkSpeed*0.6）
+    [Tooltip("下蹲功能总开关（与 ProceduralIKWalker.enableCrouch 保持一致）")]
+    public bool enableCrouch = true;
 
     public float StandingForce; // 端枪时人会前倾，这里设定一个微小的力
 
@@ -58,7 +60,7 @@ public class Moving : MonoBehaviour
     {
         IsForward = Watch.IsTurned;
 
-        bool crouching = Input.GetKey(KeyCode.LeftControl);
+        bool crouching = enableCrouch && Input.GetKey(KeyCode.LeftControl);
         float crouchSpeed = CrouchSpeed > 0f ? CrouchSpeed : WalkSpeed * 0.6f;
 
         // 取水平输入（朝向不同用不同的轴）
