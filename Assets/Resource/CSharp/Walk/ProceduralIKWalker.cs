@@ -66,6 +66,8 @@ public class ProceduralIKWalker : MonoBehaviour
     public float maxStepUp = 0.5f;       // 单步最大上坡高度（超过则不再硬爬）
     public float maxStepDown = 0.7f;     // 单步最大下坡高度
     public float footSettleOffset = 0.02f; // 落地后略微抬高，避免穿地
+    [Tooltip("落脚点坡度超过此角度（度）就不迈这一步（墙/太陡的坡无法前进）")]
+    public float maxLandingSlope = 40f;
 
     [Header("走路参数")]
     public float walkStride = 0.25f;     // 走路单步距离（越大迈得越远）
@@ -222,7 +224,7 @@ public class ProceduralIKWalker : MonoBehaviour
                 float baseY = bodyTransform != null ? bodyTransform.position.y : transform.position.y;
                 Vector3 rest = new Vector3(baseX + side * idleFootSpacing, baseY + leg.restOffset.y, 0f);
 
-                if (TryGetGround(rest, out Vector3 ground))
+                if (TryGetGround(rest, out Vector3 ground, out _))
                     rest = ground + Vector3.up * footSettleOffset;
                 leg.foot.position = Vector3.Lerp(leg.foot.position, rest, Time.deltaTime * idleSettleSpeed);
             }
@@ -272,24 +274,35 @@ public class ProceduralIKWalker : MonoBehaviour
 
     void StartStep(Leg leg)
     {
-        leg.stepping = true;
-        leg.stepT = 0f;
-        leg.stepFrom = leg.foot.position;
-        leg.stepDuration = CurrentStepDuration();
-
         float baseX = bodyTransform != null ? bodyTransform.position.x : transform.position.x;
         float baseY = bodyTransform != null ? bodyTransform.position.y : transform.position.y;
 
         // 落点：身体前方半个单步距离 + 速度前倾（让脚甩到身体前面，形成交替）
-        float overshoot = (bodyRb != null ? bodyRb.velocity.x : 0f) * leg.stepDuration * overshootFactor;
+        float duration = CurrentStepDuration();
+        float overshoot = (bodyRb != null ? bodyRb.velocity.x : 0f) * duration * overshootFactor;
         Vector3 target = new Vector3(
             baseX + MoveDir * CurrentStride() * 0.5f + overshoot,
             baseY + leg.restOffset.y,
             0f);
 
-        Vector3 to = target;
-        if (TryGetGround(target, out Vector3 ground))
-            to = ground + Vector3.up * footSettleOffset;
+        // ---- 落点有效性校验：不合格就不迈这一步（脚不落进墙里/陡坡） ----
+        if (!TryGetGround(target, out Vector3 ground, out Vector3 normal))
+            return; // 射线没打到地面
+
+        Vector3 rayOrigin = target + Vector3.up * raycastHeight;
+        if ((ground - rayOrigin).sqrMagnitude < 0.0001f)
+            return; // 落点 ≈ 射线发出点：说明落在墙里/贴脸
+
+        if (Vector2.Angle(normal, Vector2.up) > maxLandingSlope)
+            return; // 坡度太陡（墙/陡坡），迈不过去
+
+        // ---- 校验通过，正式迈步 ----
+        leg.stepping = true;
+        leg.stepT = 0f;
+        leg.stepFrom = leg.foot.position;
+        leg.stepDuration = duration;
+
+        Vector3 to = ground + Vector3.up * footSettleOffset;
 
         // 高度差钳制（避免爬墙 / 掉悬崖）
         float dh = to.y - leg.stepFrom.y;
@@ -309,13 +322,15 @@ public class ProceduralIKWalker : MonoBehaviour
         return basePos + new Vector3(leg.restOffset.x, leg.restOffset.y, 0f);
     }
 
-    bool TryGetGround(Vector3 pos, out Vector3 ground)
+    bool TryGetGround(Vector3 pos, out Vector3 ground, out Vector3 normal)
     {
         ground = pos;
+        normal = Vector3.up;
         RaycastHit2D hit = Physics2D.Raycast(pos + Vector3.up * raycastHeight, Vector2.down, raycastHeight * 2f, groundLayers);
         if (hit.collider != null)
         {
             ground = hit.point;
+            normal = hit.normal;
             return true;
         }
         return false;
@@ -327,7 +342,7 @@ public class ProceduralIKWalker : MonoBehaviour
         {
             if (leg == null || leg.foot == null) continue;
             Vector3 rest = GetRestWorldPos(leg);
-            if (TryGetGround(rest, out Vector3 ground))
+            if (TryGetGround(rest, out Vector3 ground, out _))
                 leg.foot.position = ground + Vector3.up * footSettleOffset;
         }
     }
