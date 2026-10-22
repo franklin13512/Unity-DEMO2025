@@ -74,23 +74,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[0].x
-      value: -22.995628
+      value: -2.0080304
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[0].y
-      value: -4.093419
+      value: -4.8157883
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[0].z
-      value: 0
+      value: 0.05975943
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[1].x
-      value: -26.144348
+      value: -1.6377182
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Positions.Array.data[1].y
-      value: -3.9254372
+      value: -4.9479074
       objectReference: {fileID: 0}
     - target: {fileID: 6298701191452421216, guid: 9bf85af99b011274b9048fc5da2b7bc1, type: 3}
       propertyPath: m_Parameters.widthMultiplier
