@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.RenderGraphModule;
+using UnityEngine.U2D.Animation;
+using UnityEngine.U2D.IK;
 
+/// <summary>
+/// 角色状态效果管理器：昏倒 / 流血 / 内伤 / 结痂 / 兴奋-虚弱 / 毒气，以及跌倒（滞空→布娃娃→落地回正）。
+/// public 字段与方法名保持不变。
+/// </summary>
 public class StatusManager : MonoBehaviour
 {
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////�ε�Collapse
-    //public RunAim TheRunAime;
+    public enum FallPhase { None, Airborne, Recovering }
+
+    // ================= 引用 / 昏倒 Collapse =================
+    [Header("引用 / 昏倒 Collapse")]
     public PCWalk ThePCWalk;
     public HandBigGunUpLeft TheHandBigGunLeft;
     public HandBigGunUpRight TheHandBigGunRight;
@@ -26,9 +30,40 @@ public class StatusManager : MonoBehaviour
     public float CollapseTime = 4f;
     public bool IsCollapse;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////��ѪBleed
+    // ================= 跌倒 Fall =================
+    [Header("跌倒 Fall")]
+    public bool IsFalling;
+    public FallPhase TheFallPhase = FallPhase.None;
+
+    [Tooltip("身体离地超过此距离判定为滞空")]
+    public float AirborneHeight = 1.6f;
+    [Tooltip("落到地面、离地小于此距离开始回正")]
+    public float LandHeight = 1.2f;
+    [Tooltip("回正速度")]
+    public float StandUpSpeed = 4f;
+    [Tooltip("地面所在层")]
+    public LayerMask GroundMask = 1;
+
+    [Tooltip("身体刚体（身体）")]
+    public Rigidbody2D TheBody;
+    [Tooltip("IK 行走控制器")]
+    public ProceduralIKWalker TheWalker;
+    [Tooltip("腿部 IK 管理器")]
+    public IKManager2D TheIK;
+    [Tooltip("四条腿的物理刚体（左大腿/左小腿/右大腿/右小腿）")]
+    public Rigidbody2D[] TheLegRbs;
+    [Tooltip("四条腿的 HingeJoint2D")]
+    public HingeJoint2D[] TheLegHinges;
+    [Tooltip("四条腿的 SpriteSkin（视觉层）")]
+    public SpriteSkin[] TheLegSkins;
+
+    private bool[] standingOriginStates;
+    private bool[] legOriginSimulated;
+    private bool[] legOriginHingeEnabled;
+    private bool[] legOriginSkinEnabled;
+
+    // ================= 流血 Bleed =================
+    [Header("流血 Bleed")]
     public HealthManager TheHealthManager;
     public GameObject TheBloodProject;
 
@@ -40,9 +75,8 @@ public class StatusManager : MonoBehaviour
     public bool StartTimer;
     public float PreviousTime;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////��������Internal_Injuries
+    // ================= 内伤 Internal_Injuries =================
+    [Header("内伤 Internal Injuries")]
     public bool IsInternalInjures;
     public float InternalInjures_Severity = 0;
     public float InternalInjures_SeverityMax = 10;
@@ -50,34 +84,22 @@ public class StatusManager : MonoBehaviour
     public float InternalInjures_TimeToRecover;
     public bool InternalInjures_TimerStart;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////����Burn
+    [Header("灼伤 Burn")]
     public int NumberOfBurn;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////�����˿�Scabbed
+    [Header("结痂 Scabbed")]
     public bool IsScabbed;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////ǹ��GunShot
+    [Header("枪伤 GunShot")]
     public int NumberOfGunShot;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////������Cut
+    [Header("割伤 Cut")]
     public int NumberOfCut;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////����Bruise
+    [Header("淤伤 Bruise")]
     public int NumberOfBruise;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////����Excitement && ή�Ҳ���Listless
+    [Header("兴奋 / 虚弱 Excitement / Listless")]
     public bool IsExcitement;
     public bool IsListless;
     public float ExcitementSeverity = 1f;
@@ -86,31 +108,288 @@ public class StatusManager : MonoBehaviour
     public float ExcitementRecoverTime = 120f;
     public bool ExcitementStartTimer;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////�����ж�GasPosisoning
+    [Header("毒气 GasPoisoning")]
     public bool IsGasPoisoning;
     public float GasPoisoningSeverity = 0;
     public float GasPoisoningSeverityMax = 10;
     public float GasPoisoningSeverityMin = 0;
 
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////ץ��Scratch
+    [Header("抓伤 / 咬伤 Scratch / Bite")]
     public int NumberOfScratch;
-
-    [Space]
-    [Space]
-    //////////////////////////////////////////////////////////////////////////ҧ��BiteInjury
     public int NumberOfBiteInjury;
 
-    public void Start()
+    // ================= 生命周期 =================
+    void Start()
     {
         ThePCWalk = gameObject.GetComponent<PCWalk>();
         TheHealthManager = gameObject.GetComponent<HealthManager>();
+
+        if (TheStanding != null)
+        {
+            standingOriginStates = new bool[TheStanding.Count];
+            for (int i = 0; i < TheStanding.Count; i++)
+                standingOriginStates[i] = (TheStanding[i] != null) && TheStanding[i].enabled;
+        }
+
+        if (TheLegRbs != null)
+        {
+            int n = TheLegRbs.Length;
+            legOriginSimulated = new bool[n];
+            for (int i = 0; i < n; i++)
+                legOriginSimulated[i] = (TheLegRbs[i] != null) && TheLegRbs[i].simulated;
+        }
+        if (TheLegHinges != null)
+        {
+            legOriginHingeEnabled = new bool[TheLegHinges.Length];
+            for (int i = 0; i < TheLegHinges.Length; i++)
+                legOriginHingeEnabled[i] = (TheLegHinges[i] != null) && TheLegHinges[i].enabled;
+        }
+        if (TheLegSkins != null)
+        {
+            legOriginSkinEnabled = new bool[TheLegSkins.Length];
+            for (int i = 0; i < TheLegSkins.Length; i++)
+                legOriginSkinEnabled[i] = (TheLegSkins[i] != null) && TheLegSkins[i].enabled;
+        }
+
+        IgnoreLegSelfCollisions();
     }
 
-    public void FixedUpdate()
+    void Update() { UpdateFallState(); }
+
+    void FixedUpdate()
+    {
+        UpdateBleedingState();
+        UpdateInternalInjuresState();
+        UpdateScabbedState();
+        UpdateExcitementState();
+        UpdateGasPoisoningState();
+    }
+
+    // ================= 跌倒 =================
+    void UpdateFallState()
+    {
+        if (TheBody == null) return;
+
+        float groundDist = 999f;
+        RaycastHit2D hit = Physics2D.Raycast(TheBody.position, Vector2.down, 20f, GroundMask);
+        if (hit.collider != null) groundDist = hit.distance;
+
+        switch (TheFallPhase)
+        {
+            case FallPhase.None:
+                if (groundDist > AirborneHeight) EnterFall();
+                break;
+            case FallPhase.Airborne:
+                if (groundDist <= LandHeight) StartRecover();
+                break;
+            case FallPhase.Recovering:
+                UpdateRecover();
+                break;
+        }
+    }
+
+    void EnterFall()
+    {
+        IsFalling = true;
+        TheFallPhase = FallPhase.Airborne;
+
+        SetMovingEnabled(false);
+        if (TheWalker != null) TheWalker.enabled = false;
+
+        if (TheBody != null) TheBody.freezeRotation = false;
+        SetStandingEnabled(false);
+
+        // 骨骼层停掉
+        if (TheIK != null) TheIK.enabled = false;
+
+        // 视觉层接管：关掉 SpriteSkin（不再跟骨骼），启用铰链、切 Dynamic、参与碰撞
+        SetLegSkins(false);
+        SetLegHinges(true);
+        SetLegDynamic(true);
+    }
+
+    void StartRecover()
+    {
+        if (TheFallPhase != FallPhase.Airborne) return;
+        TheFallPhase = FallPhase.Recovering;
+
+        // 视觉层交回骨骼层：恢复 SpriteSkin、关铰链、切回 Static
+        SetLegDynamic(false);
+        SetLegHinges(false);
+        SetLegSkins(true);
+
+        // 恢复 IK 和行走
+        if (TheIK != null) TheIK.enabled = true;
+        if (TheWalker != null) TheWalker.enabled = true;
+
+        // 身体临时 Kinematic：回正不吃物理
+        if (TheBody != null)
+        {
+            TheBody.velocity = Vector2.zero;
+            TheBody.angularVelocity = 0f;
+            TheBody.bodyType = RigidbodyType2D.Kinematic;
+        }
+    }
+
+    void UpdateRecover()
+    {
+        if (TheBody == null) { FinishRecover(); return; }
+
+        TheBody.rotation = Mathf.LerpAngle(TheBody.rotation, 0f, Time.deltaTime * StandUpSpeed);
+
+        if (Mathf.Abs(Mathf.DeltaAngle(TheBody.rotation, 0f)) < 3f)
+            FinishRecover();
+    }
+
+    void FinishRecover()
+    {
+        if (TheBody != null)
+        {
+            TheBody.rotation = 0f;
+            TheBody.bodyType = RigidbodyType2D.Dynamic;
+            TheBody.freezeRotation = true;
+            TheBody.velocity = Vector2.zero;
+            TheBody.angularVelocity = 0f;
+        }
+
+        SetStandingEnabled(true);
+        SetMovingEnabled(true);
+        if (TheWalker != null) TheWalker.enabled = true;
+        if (TheIK != null) TheIK.enabled = true;
+
+        IsFalling = false;
+        TheFallPhase = FallPhase.None;
+    }
+
+    void SetLegSkins(bool on)
+    {
+        if (TheLegSkins == null) return;
+        for (int i = 0; i < TheLegSkins.Length; i++)
+        {
+            if (TheLegSkins[i] == null) continue;
+            TheLegSkins[i].enabled = on;
+        }
+    }
+
+    void SetLegHinges(bool on)
+    {
+        if (TheLegHinges == null) return;
+        for (int i = 0; i < TheLegHinges.Length; i++)
+        {
+            if (TheLegHinges[i] == null) continue;
+            TheLegHinges[i].enabled = on;
+        }
+    }
+
+    void SetLegDynamic(bool dynamic)
+    {
+        if (TheLegRbs == null) return;
+        for (int i = 0; i < TheLegRbs.Length; i++)
+        {
+            if (TheLegRbs[i] == null) continue;
+            if (dynamic)
+            {
+                TheLegRbs[i].simulated = true;
+                TheLegRbs[i].bodyType = RigidbodyType2D.Dynamic;
+            }
+            else
+            {
+                TheLegRbs[i].velocity = Vector2.zero;
+                TheLegRbs[i].angularVelocity = 0f;
+                TheLegRbs[i].bodyType = RigidbodyType2D.Static;
+                if (legOriginSimulated != null && i < legOriginSimulated.Length)
+                    TheLegRbs[i].simulated = legOriginSimulated[i];
+            }
+        }
+    }
+
+    void IgnoreLegSelfCollisions()
+    {
+        if (TheLegRbs == null) return;
+
+        Collider2D bodyCol = TheBody != null ? TheBody.GetComponent<Collider2D>() : null;
+        for (int i = 0; i < TheLegRbs.Length; i++)
+        {
+            if (TheLegRbs[i] == null) continue;
+            Collider2D ci = TheLegRbs[i].GetComponent<Collider2D>();
+            if (ci == null) continue;
+
+            if (bodyCol != null) Physics2D.IgnoreCollision(bodyCol, ci, true);
+
+            for (int j = i + 1; j < TheLegRbs.Length; j++)
+            {
+                if (TheLegRbs[j] == null) continue;
+                Collider2D cj = TheLegRbs[j].GetComponent<Collider2D>();
+                if (cj != null) Physics2D.IgnoreCollision(ci, cj, true);
+            }
+        }
+    }
+
+    void SetStandingEnabled(bool enabled)
+    {
+        if (TheStanding == null) return;
+        for (int i = 0; i < TheStanding.Count; i++)
+        {
+            if (TheStanding[i] == null) continue;
+            bool target = enabled;
+            if (enabled && standingOriginStates != null && i < standingOriginStates.Length)
+                target = standingOriginStates[i];
+            TheStanding[i].enabled = target;
+        }
+    }
+
+    void SetMovingEnabled(bool enabled)
+    {
+        if (TheMoving == null) return;
+        for (int i = 0; i < TheMoving.Length; i++)
+            if (TheMoving[i] != null) TheMoving[i].enabled = enabled;
+    }
+
+    // ================= 昏倒 =================
+    public void Collapse() { StartCoroutine(WaitForAwake()); }
+
+    IEnumerator WaitForAwake()
+    {
+        IsCollapse = true;
+        SetCollapsePartsEnabled(false);
+        yield return new WaitForSeconds(CollapseTime);
+        IsCollapse = false;
+        SetCollapsePartsEnabled(true);
+    }
+
+    void SetCollapsePartsEnabled(bool enabled)
+    {
+        if (ThePCWalk) ThePCWalk.enabled = enabled;
+        if (TheAiPath) TheAiPath.enabled = enabled;
+
+        if (TheHandBigGunLeft != null) TheHandBigGunLeft.enabled = enabled;
+        if (TheHandBigGunRight != null) TheHandBigGunRight.enabled = enabled;
+        if (TheHandGunUp != null) TheHandGunUp.enabled = enabled;
+        if (TheHandGunUp2 != null) TheHandGunUp2.enabled = enabled;
+        if (Watch != null) Watch.enabled = enabled;
+        if (TheStaring != null) TheStaring.enabled = enabled;
+        if (TheMeleeAttackAnimation != null) TheMeleeAttackAnimation.enabled = enabled;
+
+        if (TheStanding != null)
+        {
+            for (int i = 0; i < TheStanding.Count; i++)
+            {
+                if (TheStanding[i] == null) continue;
+                bool target = enabled;
+                if (enabled && standingOriginStates != null && i < standingOriginStates.Length)
+                    target = standingOriginStates[i];
+                TheStanding[i].enabled = target;
+            }
+        }
+        if (TheMoving != null)
+        {
+            for (int i = 0; i < TheMoving.Length; i++)
+                if (TheMoving[i] != null) TheMoving[i].enabled = enabled;
+        }
+    }
+
+    // ================= 流血 =================
+    void UpdateBleedingState()
     {
         if (StartBleeding == true || PreviousTime != BleedingTime)
         {
@@ -123,161 +402,15 @@ public class StatusManager : MonoBehaviour
             }
             Bleeding();
         }
-
-        //////////////////////////////////////////////////////////////////////////
-        if (IsInternalInjures)
-        {
-            if (InternalInjures_TimerStart == false)
-            {
-                StopCoroutine("InternalInjures_Timer");
-                StartCoroutine("InternalInjures_Timer");
-                InternalInjures_TimerStart = true;
-            }
-            InternalInjuresFunc();
-        }
-
-        //////////////////////////////////////////////////////////////////////////
-        if (BleedingSeverity > bleedingSeverityMin && BleedingTime == 0)
-        {
-            IsScabbed = true;
-        }else if ((BleedingSeverity <= bleedingSeverityMin && BleedingTime == 0) || (BleedingSeverity > bleedingSeverityMin && BleedingTime > 0))
-        {
-            IsScabbed = false;
-        }
-
-        //////////////////////////////////////////////////////////////////////////
-        if (ExcitementSeverity > 1)
-        {
-            IsExcitement = true;
-            IsListless = false;
-        }
-        else if (ExcitementSeverity < 1)
-        {
-            IsExcitement = false;
-            IsListless = true;
-            if (ExcitementSeverity < ListLessSeverityMin)
-            {
-                ExcitementSeverity = ListLessSeverityMin;
-            }
-        }else if (ExcitementSeverity == ExcitementSeverityMin)
-        {
-            IsExcitement = false;
-            IsListless = false;
-        }
-
-        if (IsExcitement || IsListless)
-        {
-
-            if (ExcitementStartTimer == false)
-            {
-                StopCoroutine("ExcitementTimer");
-                StartCoroutine("ExcitementTimer");
-                ExcitementStartTimer = true;
-            }
-            Excitement();
-        }
-
-        //////////////////////////////////////////////////////////////////////////
-        if (GasPoisoningSeverity > GasPoisoningSeverityMin)
-        {
-            IsGasPoisoning = true;
-        }else if (GasPoisoningSeverity <= GasPoisoningSeverityMin)
-        {
-            IsGasPoisoning = false;
-            GasPoisoningSeverity = GasPoisoningSeverityMin;
-        }
-
-        if (IsGasPoisoning == true)
-        {
-            GasPoisoningFunc();
-        }
-
     }
 
-    //�ε�״̬
-    public void Collapse()
-    {
-        StartCoroutine(WaitForAwake());
-    }
-
-    IEnumerator WaitForAwake()
-    {
-        IsCollapse = true;
-        //if (TheRunAime != null)
-        //TheRunAime.enabled = false;
-        if(ThePCWalk)
-            ThePCWalk.enabled = false;
-        if (TheAiPath)
-            TheAiPath.enabled = false;
-
-        if (TheHandBigGunLeft != null)
-        TheHandBigGunLeft.enabled = false;
-        if (TheHandBigGunRight != null)
-        TheHandBigGunRight.enabled = false;
-        if (TheHandGunUp != null/* && gameObject.tag == "Player"*/)
-        TheHandGunUp.enabled = false;
-        if (Watch != null/* && gameObject.tag == "Player"*/)
-        Watch.enabled = false;
-        if (TheStaring != null/* && gameObject.tag == "Player"*/)
-        TheStaring.enabled = false;
-        if (TheHandGunUp2 != null/* && gameObject.tag == "Player"*/)
-        TheHandGunUp2.enabled = false;
-        if(TheMeleeAttackAnimation != null)
-        TheMeleeAttackAnimation.enabled = false;
-        for (int i = 0; i < TheStanding.Count; i++)
-        {
-            if (TheStanding[i] != null)
-                TheStanding[i].enabled = false;
-        }
-        for (int i = 0; i < TheMoving.Length; i++)
-        {
-            if (TheMoving[i] != null)
-            TheMoving[i].enabled = false;
-        }
-
-        yield return new WaitForSeconds(CollapseTime);
-
-        IsCollapse = false;
-        //if (TheRunAime != null)
-        //TheRunAime.enabled = true;
-        if (ThePCWalk)
-            ThePCWalk.enabled = true;
-        if (TheAiPath)
-            TheAiPath.enabled = true;
-
-        if (TheHandBigGunLeft != null)
-        TheHandBigGunLeft.enabled = true;
-        if (TheHandBigGunRight != null)
-        TheHandBigGunRight.enabled = true;
-        if (TheHandGunUp != null)
-        TheHandGunUp.enabled = true;
-        if (TheHandGunUp != null)
-        Watch.enabled = true;
-        if (Watch != null)
-        TheStaring.enabled = true;
-        if (TheHandGunUp2 != null)
-        TheHandGunUp2.enabled = true;
-        if (TheMeleeAttackAnimation != null)
-        TheMeleeAttackAnimation.enabled = true;
-        for (int i = 0; i < TheStanding.Count; i++)
-        {
-            if (TheStanding[i] != null)
-            TheStanding[i].enabled = true;
-        }
-        for (int i = 0; i < TheMoving.Length; i++)
-        {
-            if (TheMoving[i] != null)
-            TheMoving[i].enabled = true;
-        }
-    }
-
-    //��Ѫ״̬
     public void Bleeding()
     {
         if (BleedingSeverity > bleedingSeverityMax)
         {
             BleedingSeverity = bleedingSeverityMax;
-        }else if (BleedingSeverity < bleedingSeverityMin)
+        }
+        else if (BleedingSeverity < bleedingSeverityMin)
         {
             BleedingSeverity = bleedingSeverityMin;
             StartBleeding = false;
@@ -297,19 +430,33 @@ public class StatusManager : MonoBehaviour
         PreviousTime = BleedingTime;
     }
 
-    //��������״̬
+    // ================= 内伤 =================
+    void UpdateInternalInjuresState()
+    {
+        if (IsInternalInjures)
+        {
+            if (InternalInjures_TimerStart == false)
+            {
+                StopCoroutine("InternalInjures_Timer");
+                StartCoroutine("InternalInjures_Timer");
+                InternalInjures_TimerStart = true;
+            }
+            InternalInjuresFunc();
+        }
+    }
+
     public void InternalInjuresFunc()
     {
         if (InternalInjures_Severity >= InternalInjures_SeverityMax)
         {
             InternalInjures_Severity = InternalInjures_SeverityMax;
-        }else if (InternalInjures_Severity <= InternalInjures_SeverityMin)
+        }
+        else if (InternalInjures_Severity <= InternalInjures_SeverityMin)
         {
             InternalInjures_Severity = InternalInjures_SeverityMin;
             IsInternalInjures = false;
             InternalInjures_TimerStart = false;
             InternalInjures_TimeToRecover = 0;
-
         }
     }
 
@@ -332,13 +479,52 @@ public class StatusManager : MonoBehaviour
         }
     }
 
-    //����״̬
+    // ================= 结痂 =================
+    void UpdateScabbedState()
+    {
+        if (BleedingSeverity > bleedingSeverityMin && BleedingTime == 0)
+            IsScabbed = true;
+        else if ((BleedingSeverity <= bleedingSeverityMin && BleedingTime == 0) || (BleedingSeverity > bleedingSeverityMin && BleedingTime > 0))
+            IsScabbed = false;
+    }
+
+    // ================= 兴奋 / 虚弱 =================
+    void UpdateExcitementState()
+    {
+        if (ExcitementSeverity > 1)
+        {
+            IsExcitement = true;
+            IsListless = false;
+        }
+        else if (ExcitementSeverity < 1)
+        {
+            IsExcitement = false;
+            IsListless = true;
+            if (ExcitementSeverity < ListLessSeverityMin)
+                ExcitementSeverity = ListLessSeverityMin;
+        }
+        else if (ExcitementSeverity == ExcitementSeverityMin)
+        {
+            IsExcitement = false;
+            IsListless = false;
+        }
+
+        if (IsExcitement || IsListless)
+        {
+            if (ExcitementStartTimer == false)
+            {
+                StopCoroutine("ExcitementTimer");
+                StartCoroutine("ExcitementTimer");
+                ExcitementStartTimer = true;
+            }
+            Excitement();
+        }
+    }
+
     public void Excitement()
     {
         if (IsExcitement == true)
-        {
             ExcitementSeverity = 1.8f;
-        }
     }
 
     IEnumerator ExcitementTimer()
@@ -349,13 +535,30 @@ public class StatusManager : MonoBehaviour
         IsListless = false;
     }
 
-    //�����ж�
+    // ================= 毒气 =================
+    void UpdateGasPoisoningState()
+    {
+        if (GasPoisoningSeverity > GasPoisoningSeverityMin)
+        {
+            IsGasPoisoning = true;
+        }
+        else if (GasPoisoningSeverity <= GasPoisoningSeverityMin)
+        {
+            IsGasPoisoning = false;
+            GasPoisoningSeverity = GasPoisoningSeverityMin;
+        }
+
+        if (IsGasPoisoning == true)
+            GasPoisoningFunc();
+    }
+
     public void GasPoisoningFunc()
     {
         if (GasPoisoningSeverity > GasPoisoningSeverityMax)
         {
             GasPoisoningSeverity = GasPoisoningSeverityMax;
-        }else if (GasPoisoningSeverity <= GasPoisoningSeverityMin)
+        }
+        else if (GasPoisoningSeverity <= GasPoisoningSeverityMin)
         {
             GasPoisoningSeverity = GasPoisoningSeverityMin;
             IsGasPoisoning = false;
