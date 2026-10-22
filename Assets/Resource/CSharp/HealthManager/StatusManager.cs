@@ -43,6 +43,10 @@ public class StatusManager : MonoBehaviour
     public float StandUpSpeed = 4f;
     [Tooltip("地面所在层")]
     public LayerMask GroundMask = 1;
+    [Tooltip("滞空/落地判定的去抖时间（秒），避免边缘处每帧切换")]
+    public float FallDebounce = 0.15f;
+    [Tooltip("落地判定允许的垂直速度")]
+    public float LandingVelocity = 1f;
 
     [Tooltip("身体刚体（身体）")]
     public Rigidbody2D TheBody;
@@ -61,6 +65,9 @@ public class StatusManager : MonoBehaviour
     private bool[] legOriginSimulated;
     private bool[] legOriginHingeEnabled;
     private bool[] legOriginSkinEnabled;
+
+    private float airborneTimer;
+    private float groundedTimer;
 
     // ================= 流血 Bleed =================
     [Header("流血 Bleed")]
@@ -174,13 +181,33 @@ public class StatusManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(TheBody.position, Vector2.down, 20f, GroundMask);
         if (hit.collider != null) groundDist = hit.distance;
 
+        // 去抖：条件要持续 FallDebounce 秒才切换，避免边缘处每帧来回跳
+        bool airborne = groundDist > AirborneHeight;
+        bool grounded = groundDist <= LandHeight && Mathf.Abs(TheBody.velocity.y) < LandingVelocity;
+
+        if (airborne)
+        {
+            airborneTimer += Time.deltaTime;
+            groundedTimer = 0f;
+        }
+        else if (grounded)
+        {
+            groundedTimer += Time.deltaTime;
+            airborneTimer = 0f;
+        }
+        else
+        {
+            airborneTimer = 0f;
+            groundedTimer = 0f;
+        }
+
         switch (TheFallPhase)
         {
             case FallPhase.None:
-                if (groundDist > AirborneHeight) EnterFall();
+                if (airborneTimer >= FallDebounce) EnterFall();
                 break;
             case FallPhase.Airborne:
-                if (groundDist <= LandHeight) StartRecover();
+                if (groundedTimer >= FallDebounce) StartRecover();
                 break;
             case FallPhase.Recovering:
                 UpdateRecover();
@@ -192,6 +219,8 @@ public class StatusManager : MonoBehaviour
     {
         IsFalling = true;
         TheFallPhase = FallPhase.Airborne;
+        airborneTimer = 0f;
+        groundedTimer = 0f;
 
         SetMovingEnabled(false);
         if (TheWalker != null) TheWalker.enabled = false;
@@ -212,6 +241,8 @@ public class StatusManager : MonoBehaviour
     {
         if (TheFallPhase != FallPhase.Airborne) return;
         TheFallPhase = FallPhase.Recovering;
+        airborneTimer = 0f;
+        groundedTimer = 0f;
 
         // 视觉层交回骨骼层：恢复 SpriteSkin、关铰链、切回 Static
         SetLegDynamic(false);
@@ -259,6 +290,8 @@ public class StatusManager : MonoBehaviour
 
         IsFalling = false;
         TheFallPhase = FallPhase.None;
+        airborneTimer = 0f;
+        groundedTimer = 0f;
     }
 
     void SetLegSkins(bool on)
