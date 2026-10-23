@@ -60,6 +60,8 @@ public class StatusManager : MonoBehaviour
     public HingeJoint2D[] TheLegHinges;
     [Tooltip("四条腿的 SpriteSkin（视觉层）")]
     public SpriteSkin[] TheLegSkins;
+    [Tooltip("四条腿的骨骼（左大腿骨/左小腿骨/右大腿骨/右小腿骨），顺序与 TheLegRbs 一致")]
+    public Transform[] TheLegBones;
 
     private bool[] standingOriginStates;
     private bool[] legOriginSimulated;
@@ -163,6 +165,13 @@ public class StatusManager : MonoBehaviour
 
     void Update() { UpdateFallState(); }
 
+    void LateUpdate()
+    {
+        // 非布娃娃状态时，让物理腿始终跟着腿骨（视觉腿）走，避免跌倒瞬间错位被扯
+        if (TheFallPhase != FallPhase.Airborne)
+            SyncLegsToBones();
+    }
+
     void FixedUpdate()
     {
         UpdateBleedingState();
@@ -227,6 +236,9 @@ public class StatusManager : MonoBehaviour
 
         if (TheBody != null) TheBody.freezeRotation = false;
         SetStandingEnabled(false);
+
+        // 先把物理腿同步到腿骨当前位置，避免启用铰链/关蒙皮时角色被扯走
+        SyncLegsToBones();
 
         // 骨骼层停掉
         if (TheIK != null) TheIK.enabled = false;
@@ -333,6 +345,21 @@ public class StatusManager : MonoBehaviour
                 if (legOriginSimulated != null && i < legOriginSimulated.Length)
                     TheLegRbs[i].simulated = legOriginSimulated[i];
             }
+        }
+    }
+
+    void SyncLegsToBones()
+    {
+        if (TheLegRbs == null || TheLegBones == null) return;
+        int n = Mathf.Min(TheLegRbs.Length, TheLegBones.Length);
+        for (int i = 0; i < n; i++)
+        {
+            if (TheLegRbs[i] == null || TheLegBones[i] == null) continue;
+            // 只同步位置：骨头和物理腿的旋转含义不同（骨头约 270°，物理腿约 0.7°），
+            // 同步旋转会让贴图和铰链锚点瞬间乱转，导致抽搐/被扯走。
+            // Static 刚体的 rb.position 和 transform.position 是解耦的，两个都要写。
+            TheLegRbs[i].position = TheLegBones[i].position;
+            TheLegRbs[i].transform.position = TheLegBones[i].position;
         }
     }
 
