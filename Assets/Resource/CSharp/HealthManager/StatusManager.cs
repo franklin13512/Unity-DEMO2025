@@ -186,6 +186,13 @@ public class StatusManager : MonoBehaviour
     {
         if (TheBody == null) return;
 
+        // 昏倒期间不按地面检测切换；回正由 Collapse 协程控制
+        if (IsCollapse)
+        {
+            if (TheFallPhase == FallPhase.Recovering) UpdateRecover();
+            return;
+        }
+
         float groundDist = 999f;
         RaycastHit2D hit = Physics2D.Raycast(TheBody.position, Vector2.down, 20f, GroundMask);
         if (hit.collider != null) groundDist = hit.distance;
@@ -232,6 +239,7 @@ public class StatusManager : MonoBehaviour
         groundedTimer = 0f;
 
         SetMovingEnabled(false);
+        SetCombatControlsEnabled(false);   // 跌倒/昏倒期间禁用攻击、UI、瞄准
         if (TheWalker != null) TheWalker.enabled = false;
 
         if (TheBody != null) TheBody.freezeRotation = false;
@@ -297,6 +305,7 @@ public class StatusManager : MonoBehaviour
 
         SetStandingEnabled(true);
         SetMovingEnabled(true);
+        SetCombatControlsEnabled(true);   // 恢复攻击、UI、瞄准
         if (TheWalker != null) TheWalker.enabled = true;
         if (TheIK != null) TheIK.enabled = true;
 
@@ -406,18 +415,36 @@ public class StatusManager : MonoBehaviour
     }
 
     // ================= 昏倒 =================
-    public void Collapse() { StartCoroutine(WaitForAwake()); }
+    public void Collapse()
+    {
+        if (IsCollapse || IsFalling) return;
+        StartCoroutine(WaitForAwake());
+    }
 
     IEnumerator WaitForAwake()
     {
         IsCollapse = true;
-        SetCollapsePartsEnabled(false);
+
+        // 进入布娃娃（复用跌倒的入/回正逻辑，同时会禁用移动/攻击/UI）
+        EnterFall();
+
         yield return new WaitForSeconds(CollapseTime);
+
+        // 时间到：在地面就立刻回正；在空中就继续布娃娃，等落地后再回正
+        if (IsGrounded())
+            StartRecover();
+        else
+            IsCollapse = false;
+
+        // 等回正真正完成
+        while (TheFallPhase != FallPhase.None)
+            yield return null;
+
         IsCollapse = false;
-        SetCollapsePartsEnabled(true);
     }
 
-    void SetCollapsePartsEnabled(bool enabled)
+    /// <summary>禁用/恢复战斗相关组件（手、瞄准、UI、近战、行走）。</summary>
+    void SetCombatControlsEnabled(bool enabled)
     {
         if (ThePCWalk) ThePCWalk.enabled = enabled;
         if (TheAiPath) TheAiPath.enabled = enabled;
@@ -429,23 +456,14 @@ public class StatusManager : MonoBehaviour
         if (Watch != null) Watch.enabled = enabled;
         if (TheStaring != null) TheStaring.enabled = enabled;
         if (TheMeleeAttackAnimation != null) TheMeleeAttackAnimation.enabled = enabled;
+    }
 
-        if (TheStanding != null)
-        {
-            for (int i = 0; i < TheStanding.Count; i++)
-            {
-                if (TheStanding[i] == null) continue;
-                bool target = enabled;
-                if (enabled && standingOriginStates != null && i < standingOriginStates.Length)
-                    target = standingOriginStates[i];
-                TheStanding[i].enabled = target;
-            }
-        }
-        if (TheMoving != null)
-        {
-            for (int i = 0; i < TheMoving.Length; i++)
-                if (TheMoving[i] != null) TheMoving[i].enabled = enabled;
-        }
+    bool IsGrounded()
+    {
+        if (TheBody == null) return true;
+
+        RaycastHit2D hit = Physics2D.Raycast(TheBody.position, Vector2.down, 20f, GroundMask);
+        return hit.collider != null && hit.distance <= LandHeight;
     }
 
     // ================= 流血 =================
