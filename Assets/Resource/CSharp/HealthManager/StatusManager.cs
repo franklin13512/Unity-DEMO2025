@@ -41,6 +41,8 @@ public class StatusManager : MonoBehaviour
     public float LandHeight = 1.2f;
     [Tooltip("回正速度")]
     public float StandUpSpeed = 4f;
+    [Tooltip("腿部恢复后、身体开始回正的延迟（秒）")]
+    public float LegRestoreDelay = 0.15f;
     [Tooltip("地面所在层")]
     public LayerMask GroundMask = 1;
     [Tooltip("滞空/落地判定的去抖时间（秒），避免边缘处每帧切换")]
@@ -70,6 +72,7 @@ public class StatusManager : MonoBehaviour
 
     private float airborneTimer;
     private float groundedTimer;
+    private float recoverTimer;
 
     // ================= 流血 Bleed =================
     [Header("流血 Bleed")]
@@ -263,6 +266,7 @@ public class StatusManager : MonoBehaviour
         TheFallPhase = FallPhase.Recovering;
         airborneTimer = 0f;
         groundedTimer = 0f;
+        recoverTimer = 0f;
 
         // 视觉层交回骨骼层：恢复 SpriteSkin、关铰链、切回 Static
         SetLegDynamic(false);
@@ -285,6 +289,13 @@ public class StatusManager : MonoBehaviour
     void UpdateRecover()
     {
         if (TheBody == null) { FinishRecover(); return; }
+
+        // 先等腿部恢复稳定，再开始转身体
+        if (recoverTimer < LegRestoreDelay)
+        {
+            recoverTimer += Time.deltaTime;
+            return;
+        }
 
         TheBody.rotation = Mathf.LerpAngle(TheBody.rotation, 0f, Time.deltaTime * StandUpSpeed);
 
@@ -313,6 +324,7 @@ public class StatusManager : MonoBehaviour
         TheFallPhase = FallPhase.None;
         airborneTimer = 0f;
         groundedTimer = 0f;
+        recoverTimer = 0f;
     }
 
     void SetLegSkins(bool on)

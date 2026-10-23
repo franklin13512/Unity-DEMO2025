@@ -18297,6 +18297,7 @@ MonoBehaviour:
   AirborneHeight: 1.6
   LandHeight: 1.2
   StandUpSpeed: 4
+  LegRestoreDelay: 0.15
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
@@ -86216,6 +86217,7 @@ MonoBehaviour:
   AirborneHeight: 1.6
   LandHeight: 1.2
   StandUpSpeed: 4
+  LegRestoreDelay: 0.15
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
