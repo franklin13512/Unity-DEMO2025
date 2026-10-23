@@ -68,15 +68,12 @@ public class HealthManager : Player
             TheAiPath.enabled = false;
             IsDead = true;
 
-            if (AllLegs.Length > 0)
+            // 死亡交给布娃娃系统
+            if (TheStatus != null)
             {
-                for (int i = 0; i < AllLegs.Length; i++)
-                {
-                    Rigidbody2D TheRb = AllLegs[i].gameObject.AddComponent<Rigidbody2D>();
-                    TheRb.simulated = false;
-                }
+                TheStatus.Die();
+                TheStatus.enabled = false;
             }
-
         }
 
         if (ThePCWalk != null && Health <= 0)
@@ -108,44 +105,33 @@ public class HealthManager : Player
 
             if (Health <= 0 && IsDead == false)
             {
-
                 IsDead = true;
 
-                if (AllLegs.Length > 0)
+                // 死亡交给布娃娃系统：进入布娃娃 + 禁用移动/攻击/瞄准
+                if (TheStatus != null)
                 {
-                    for (int i = 0; i < AllLegs.Length; i++)
-                    {
-                        Rigidbody2D TheRb = AllLegs[i].gameObject.AddComponent<Rigidbody2D>();
-                        TheRb.simulated = false;
-                    }
+                    TheStatus.Die();
+                    TheStatus.enabled = false;   // 死亡后关掉状态系统，避免昏倒/回正叠加
                 }
-
-                if (ThePCWalk != null)
-                {
-                    ThePCWalk.enabled = false;
-                }
-
-                TheHandBigGunLeft.enabled = false;
-                TheHandBigGunRight.enabled = false;
-                TheHandGunUp.enabled = false;
-                Watch.enabled = false;
-                TheStaring.enabled = false;
-                TheHandGunUp2.enabled = false;
 
                 TheBloodImage.enabled = true;
 
-                JointAngleLimits2D TheLimit0 = TheHinge0.limits;
-                TheLimit0.min = 0; TheLimit0.max = 360;
+                // 手臂铰链放宽（布娃娃下手臂更自由，保留）
+                if (TheHinge0 != null)
+                {
+                    JointAngleLimits2D TheLimit0 = TheHinge0.limits;
+                    TheLimit0.min = 0; TheLimit0.max = 360;
+                    TheHinge0.limits = TheLimit0;
+                }
+                if (TheHinge1 != null)
+                {
+                    JointAngleLimits2D TheLimit1 = TheHinge1.limits;
+                    TheLimit1.min = 0; TheLimit1.max = 360;
+                    TheHinge1.limits = TheLimit1;
+                }
 
-                JointAngleLimits2D TheLimit1 = TheHinge1.limits;
-                TheLimit1.min = 0; TheLimit1.max = 360;
-
-                TheHinge0.limits = TheLimit0;
-                TheHinge1.limits = TheLimit1;
-
-                TheStatus.enabled = false;
+                // StatusManager 保持启用（靠 IsDead 阻止回正）
                 this.enabled = false;
-
             }else if (Health <= 50 && Health >30)
             {
                 TheColorOfSlider.color = Color.yellow;

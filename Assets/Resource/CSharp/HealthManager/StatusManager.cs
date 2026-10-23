@@ -33,6 +33,7 @@ public class StatusManager : MonoBehaviour
     // ================= 跌倒 Fall =================
     [Header("跌倒 Fall")]
     public bool IsFalling;
+    public bool IsDead;
     public FallPhase TheFallPhase = FallPhase.None;
 
     [Tooltip("身体离地超过此距离判定为滞空")]
@@ -192,6 +193,9 @@ public class StatusManager : MonoBehaviour
     {
         if (TheBody == null) return;
 
+        // 死亡：布娃娃永久保持，不回正
+        if (IsDead) return;
+
         // 昏倒期间不按地面检测切换；回正由 Collapse 协程控制
         if (IsCollapse)
         {
@@ -261,6 +265,18 @@ public class StatusManager : MonoBehaviour
         SetLegSkins(false);
         SetLegHinges(true);
         SetLegDynamic(true);
+    }
+
+    /// <summary>死亡：进入布娃娃并永久保持（不回正），同时禁用移动/攻击/瞄准。</summary>
+    public void Die()
+    {
+        if (IsDead) return;
+        IsDead = true;
+
+        // 已经在布娃娃里（跌倒/昏倒）：只需标记死亡、禁止回正
+        if (TheFallPhase == FallPhase.Airborne) return;
+
+        EnterFall();
     }
 
     void StartRecover()
@@ -459,14 +475,14 @@ public class StatusManager : MonoBehaviour
 
         yield return new WaitForSeconds(CollapseTime);
 
-        // 时间到：在地面就立刻回正；在空中就继续布娃娃，等落地后再回正
-        if (IsGrounded())
+        // 时间到：在地面就立刻回正；在空中/已死亡就继续布娃娃
+        if (!IsDead && IsGrounded())
             StartRecover();
         else
             IsCollapse = false;
 
         // 等回正真正完成
-        while (TheFallPhase != FallPhase.None)
+        while (!IsDead && TheFallPhase != FallPhase.None)
             yield return null;
 
         IsCollapse = false;
