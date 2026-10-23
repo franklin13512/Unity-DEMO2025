@@ -43,6 +43,8 @@ public class StatusManager : MonoBehaviour
     public float StandUpSpeed = 4f;
     [Tooltip("腿部恢复后、身体开始回正的延迟（秒）")]
     public float LegRestoreDelay = 0.15f;
+    [Tooltip("站立时身体中心离地的高度（起身的目标高度）")]
+    public float StandingBodyHeight = 1.09f;
     [Tooltip("地面所在层")]
     public LayerMask GroundMask = 1;
     [Tooltip("滞空/落地判定的去抖时间（秒），避免边缘处每帧切换")]
@@ -73,6 +75,7 @@ public class StatusManager : MonoBehaviour
     private float airborneTimer;
     private float groundedTimer;
     private float recoverTimer;
+    private Vector2 recoverTargetPos;
 
     // ================= 流血 Bleed =================
     [Header("流血 Bleed")]
@@ -283,6 +286,12 @@ public class StatusManager : MonoBehaviour
             TheBody.velocity = Vector2.zero;
             TheBody.angularVelocity = 0f;
             TheBody.bodyType = RigidbodyType2D.Kinematic;
+
+            // 计算起身目标位置：脚下地面 + 站立高度
+            float groundY = TheBody.position.y - StandingBodyHeight;
+            RaycastHit2D hit = Physics2D.Raycast(TheBody.position, Vector2.down, 20f, GroundMask);
+            if (hit.collider != null) groundY = hit.point.y;
+            recoverTargetPos = new Vector2(TheBody.position.x, groundY + StandingBodyHeight);
         }
     }
 
@@ -290,16 +299,23 @@ public class StatusManager : MonoBehaviour
     {
         if (TheBody == null) { FinishRecover(); return; }
 
-        // 先等腿部恢复稳定，再开始转身体
+        // 先等腿部恢复稳定
         if (recoverTimer < LegRestoreDelay)
         {
             recoverTimer += Time.deltaTime;
             return;
         }
+        recoverTimer += Time.deltaTime;
 
-        TheBody.rotation = Mathf.LerpAngle(TheBody.rotation, 0f, Time.deltaTime * StandUpSpeed);
+        float k = Time.deltaTime * StandUpSpeed;
 
-        if (Mathf.Abs(Mathf.DeltaAngle(TheBody.rotation, 0f)) < 3f)
+        // 身体一边升到站立高度，一边转正
+        TheBody.position = Vector2.Lerp(TheBody.position, recoverTargetPos, k);
+        TheBody.rotation = Mathf.LerpAngle(TheBody.rotation, 0f, k);
+
+        bool rotDone = Mathf.Abs(Mathf.DeltaAngle(TheBody.rotation, 0f)) < 3f;
+        bool posDone = Vector2.Distance(TheBody.position, recoverTargetPos) < 0.02f;
+        if (rotDone && posDone)
             FinishRecover();
     }
 
@@ -307,6 +323,7 @@ public class StatusManager : MonoBehaviour
     {
         if (TheBody != null)
         {
+            TheBody.position = recoverTargetPos;
             TheBody.rotation = 0f;
             TheBody.bodyType = RigidbodyType2D.Dynamic;
             TheBody.freezeRotation = true;
