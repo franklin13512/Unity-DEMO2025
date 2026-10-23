@@ -244,8 +244,11 @@ GameObject:
   - component: {fileID: 5810054219451654849}
   - component: {fileID: 5235637742079040732}
   - component: {fileID: 3956853938176677703}
+  - component: {fileID: 4512716218382353094}
+  - component: {fileID: 4758924867336998035}
+  - component: {fileID: 7645262541154839309}
   m_Layer: 11
-  m_Name: FurLeg_1
+  m_Name: "\u5927\u817F1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,6 +343,105 @@ MonoBehaviour:
     m_Extent: {x: 0.09544182, y: 0.046860933, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!50 &4512716218382353094
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240672884400338767}
+  m_BodyType: 2
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!233 &4758924867336998035
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240672884400338767}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1097622102235014389}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 1.2782295, y: -0.57288647}
+  m_ConnectedAnchor: {x: -0.16936769, y: -1.6300389}
+  m_UseConnectedAnchor: 1
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!61 &7645262541154839309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240672884400338767}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 1.3522608, y: -1.0450044}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.91, y: 0.5}
+    newSize: {x: 0.91, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.29406404, y: 0.9882552}
+  m_EdgeRadius: 0
 --- !u!1 &2900630780852296036
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,8 +874,11 @@ GameObject:
   - component: {fileID: 3804470334734448220}
   - component: {fileID: 6956822211576733054}
   - component: {fileID: 1945983717746485643}
+  - component: {fileID: 419679337917799421}
+  - component: {fileID: 3304961250734483685}
+  - component: {fileID: 4818864020416457241}
   m_Layer: 11
-  m_Name: FurLeg_1 (1)
+  m_Name: "\u5927\u817F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,6 +973,105 @@ MonoBehaviour:
     m_Extent: {x: 0.09544182, y: 0.046860933, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!50 &419679337917799421
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594897166049777846}
+  m_BodyType: 2
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!233 &3304961250734483685
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594897166049777846}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1097622102235014389}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.43711483, y: -0.5596387}
+  m_ConnectedAnchor: {x: 0.07616828, y: -1.7008734}
+  m_UseConnectedAnchor: 1
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!61 &4818864020416457241
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594897166049777846}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.3661733, y: -0.98337686}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.91, y: 0.5}
+    newSize: {x: 0.91, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.24586278, y: 0.9816642}
+  m_EdgeRadius: 0
 --- !u!1 &3656947753889590697
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,8 +1083,11 @@ GameObject:
   - component: {fileID: 7161736362920747911}
   - component: {fileID: 4333896668711978758}
   - component: {fileID: 1766980168882713622}
+  - component: {fileID: 206293196900522772}
+  - component: {fileID: 5573732819230654183}
+  - component: {fileID: 1591049703634700505}
   m_Layer: 11
-  m_Name: FurLeg_0
+  m_Name: "\u5C0F\u817F1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,6 +1182,105 @@ MonoBehaviour:
     m_Extent: {x: 0.15370572, y: 0.29839587, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!50 &206293196900522772
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656947753889590697}
+  m_BodyType: 2
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!233 &5573732819230654183
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656947753889590697}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 4512716218382353094}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 3.2900462, y: -0.0076157576}
+  m_ConnectedAnchor: {x: 1.2745059, y: -1.4785961}
+  m_UseConnectedAnchor: 1
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!61 &1591049703634700505
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656947753889590697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 3.415696, y: -2.0975318}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.04, y: 4}
+    newSize: {x: 2.04, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.727674, y: 4.402362}
+  m_EdgeRadius: 0
 --- !u!1 &4041223051204892382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,8 +1387,11 @@ GameObject:
   - component: {fileID: 2384458072996883185}
   - component: {fileID: 3517710307724304886}
   - component: {fileID: 4175117000439121447}
+  - component: {fileID: 5432223685119237169}
+  - component: {fileID: 659938139723728415}
+  - component: {fileID: 7988987116115078582}
   m_Layer: 11
-  m_Name: FurLeg_0 (1)
+  m_Name: "\u5C0F\u817F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,6 +1486,105 @@ MonoBehaviour:
     m_Extent: {x: 0.15370572, y: 0.2983961, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!50 &5432223685119237169
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243247534772141346}
+  m_BodyType: 2
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!233 &659938139723728415
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243247534772141346}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 419679337917799421}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 2.0638938, y: 0.060925387}
+  m_ConnectedAnchor: {x: 0.38909745, y: -1.4291017}
+  m_UseConnectedAnchor: 1
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!61 &7988987116115078582
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243247534772141346}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 2.318451, y: -2.0059886}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.04, y: 4}
+    newSize: {x: 2.04, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.6414685, y: 4.398241}
+  m_EdgeRadius: 0
 --- !u!1 &5455256991828223283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,7 +1930,7 @@ MonoBehaviour:
   DamageSlider: {fileID: 0}
   MinusSpeed: 0
   TheRb: {fileID: 0}
-  TheStatus: {fileID: 0}
+  TheStatus: {fileID: 3084812821929781350}
   ThePlayer: {fileID: 0}
   TheHinge0: {fileID: 0}
   TheHinge1: {fileID: 0}
@@ -1539,7 +1947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4940949421fab91459f560dd80512369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThePCWalk: {fileID: 0}
+  ThePCWalk: {fileID: 5399240810795335925}
   TheHandBigGunLeft: {fileID: 0}
   TheHandBigGunRight: {fileID: 0}
   TheHandGunUp: {fileID: 0}
@@ -1547,11 +1955,48 @@ MonoBehaviour:
   Watch: {fileID: 0}
   TheStaring: {fileID: 0}
   TheMeleeAttackAnimation: {fileID: 0}
-  TheStanding: []
+  TheStanding:
+  - {fileID: 7903420468507227175}
   TheMoving: []
-  TheAiPath: {fileID: 0}
+  TheAiPath: {fileID: 2796861542336276646}
   CollapseTime: 4
   IsCollapse: 0
+  IsFalling: 0
+  IsDead: 0
+  TheFallPhase: 0
+  AirborneHeight: 1.6
+  LandHeight: 1.2
+  StandUpSpeed: 4
+  LegRestoreDelay: 0.15
+  StandingBodyHeight: 0
+  GroundMask:
+    serializedVersion: 2
+    m_Bits: 1
+  FallDebounce: 0.15
+  LandingVelocity: 1
+  TheBody: {fileID: 1097622102235014389}
+  TheWalker: {fileID: 0}
+  TheIK: {fileID: 5062212874447982118}
+  TheLegRbs:
+  - {fileID: 206293196900522772}
+  - {fileID: 4512716218382353094}
+  - {fileID: 5432223685119237169}
+  - {fileID: 419679337917799421}
+  TheLegHinges:
+  - {fileID: 5573732819230654183}
+  - {fileID: 4758924867336998035}
+  - {fileID: 659938139723728415}
+  - {fileID: 3304961250734483685}
+  TheLegSkins:
+  - {fileID: 1766980168882713622}
+  - {fileID: 3956853938176677703}
+  - {fileID: 4175117000439121447}
+  - {fileID: 1945983717746485643}
+  TheLegBones:
+  - {fileID: 4456056389028119370}
+  - {fileID: 1373770390543811329}
+  - {fileID: 260924315075663998}
+  - {fileID: 96649620341526397}
   TheHealthManager: {fileID: 0}
   TheBloodProject: {fileID: 0}
   StartBleeding: 0
@@ -1606,7 +2051,7 @@ GameObject:
   - component: {fileID: 2154514538444382048}
   - component: {fileID: 2414920118362716428}
   m_Layer: 11
-  m_Name: FurSpider_0
+  m_Name: "\u8EAB\u4F53"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1719,7 +2164,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
