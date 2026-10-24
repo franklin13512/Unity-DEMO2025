@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class HandBigGunUpLeft : Player
+public class HandBigGunUpLeft : MonoBehaviour
 {
+    [Tooltip("鼠标朝向组件（原来从 Player 继承）")]
+    public WatchMouse Watch;
+
     public HingeJoint2D Hand;
     public JointMotor2D HandAngle;
     public JointAngleLimits2D AngleLimits;

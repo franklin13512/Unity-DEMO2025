@@ -170,20 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c29d6e0e1960346a691a05224a3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
   ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
   TheHealthManager: {fileID: 0}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   ThisRb: {fileID: 0}
   Magnification: 0.7
   BodyRb: {fileID: 0}
@@ -567,20 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c29d6e0e1960346a691a05224a3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
   ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
   TheHealthManager: {fileID: 0}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   ThisRb: {fileID: 0}
   Magnification: 0.7
   BodyRb: {fileID: 0}
@@ -800,20 +776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c29d6e0e1960346a691a05224a3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
   ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
   TheHealthManager: {fileID: 0}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   ThisRb: {fileID: 0}
   Magnification: 0.7
   BodyRb: {fileID: 0}
@@ -1677,20 +1641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c29d6e0e1960346a691a05224a3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
   ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
   TheHealthManager: {fileID: 0}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   ThisRb: {fileID: 0}
   Magnification: 0.7
   BodyRb: {fileID: 0}
@@ -1893,20 +1845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e91e70fbd3e3441b0abc2315ca3254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
-  ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
-  TheHealthManager: {fileID: 8754181005788649164}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   IsFemale: 0
   IsDead: 0
   AllLegs:
@@ -1932,6 +1870,9 @@ MonoBehaviour:
   TheRb: {fileID: 0}
   TheStatus: {fileID: 3084812821929781350}
   ThePlayer: {fileID: 0}
+  ThingInHand: {fileID: 0}
+  BodyBox: {fileID: 0}
+  TheJoin2D: {fileID: 0}
   TheHinge0: {fileID: 0}
   TheHinge1: {fileID: 0}
   TheAiPath: {fileID: 0}
@@ -2333,20 +2274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c29d6e0e1960346a691a05224a3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingInHand: {fileID: 0}
   ThePrefabList: {fileID: 0}
-  Watch: {fileID: 0}
   TheHealthManager: {fileID: 0}
-  TItem: {fileID: 0}
-  TheItem: {fileID: 0}
-  RightHandPos: {fileID: 0}
-  HandPos: {fileID: 0}
-  RightHandRig: {fileID: 0}
-  TheJoin2D: {fileID: 0}
-  BodyBox: {fileID: 0}
-  TheInventoryStorage: {fileID: 0}
-  TheHair: {fileID: 0}
-  TheLimbRbs: []
   ThisRb: {fileID: 0}
   Magnification: 1
   BodyRb: {fileID: 0}

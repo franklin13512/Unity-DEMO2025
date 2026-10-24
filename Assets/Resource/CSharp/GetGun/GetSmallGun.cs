@@ -43,6 +43,8 @@ public class GetSmallGun : MonoBehaviour
     void Start()
     {
         ThePlayer = HandPos.transform.parent.transform.parent.GetComponent<Player>();
+        if (ThePlayer == null) ThePlayer = Player.FindComponentInAncestors<Player>(transform);
+        if (ThePlayer == null) ThePlayer = transform.root.GetComponent<Player>();
         IsForward = Watch.IsTurned;
         RightHandPos.SetActive(false);
     }

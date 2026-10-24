@@ -108,7 +108,7 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
         if (slot == null || slot.TheThingsInSlot == null || slot.TheThingsInSlot.TheBaseItem == null)
             TheInventoryManager.AllInventory_BaseItem[ItemSlotSelectedIndex].TheThingsInSlot.TheBaseItem = new CreateNewJson.BaseItem();
 
-        /////////////////////////////////////////////////////////////////ÉÏ·½´úÂë²»ÓÃ¹Ü
+        /////////////////////////////////////////////////////////////////ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ë²»ï¿½Ã¹ï¿½
 
         if (TheInventoryManager.AllInventory_BaseItem[ItemSlotSelectedIndex].TheThingsInSlot.TheBaseItem.Type == CreateNewJson.TheType.LongRangeWeapon)
         {
@@ -116,7 +116,7 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
 
             while (TheInventoryManager.AllInventory_BaseItem[ItemSlotSelectedIndex].TheThingsInSlot.TheObj == null)
             {
-                yield return null; // µÈ´ýÏÂÒ»Ö¡
+                yield return null; // ï¿½È´ï¿½ï¿½ï¿½Ò»Ö¡
             }
 
             if (TheInventoryManager.AllInventory_BaseItem[ItemSlotSelectedIndex].TheThingsInSlot.TheBaseItem.HandleStyle == CreateNewJson.TheHandleStyle.MainHandWeapon)
@@ -191,9 +191,9 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
     //                    Magazine TheMagazine = Theadd.TheMagazine;
     //                    Item TheItem = TheMagazine.gameObject.GetComponent<Item>();
 
-    //                    if (Theadd && TheMagazine && TheItem && TheItem.Stackable == false)//·Çµþ¼Óµ¯Ò©
+    //                    if (Theadd && TheMagazine && TheItem && TheItem.Stackable == false)//ï¿½Çµï¿½ï¿½Óµï¿½Ò©
     //                    {
-    //                        TheMagazineSlot.ItemImage.sprite = TheItem.TheSprite;//¸üÐÂÔ¤ÀÀÍ¼
+    //                        TheMagazineSlot.ItemImage.sprite = TheItem.TheSprite;//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Í¼
     //                        TheMagazineSlot.UniqueCode = TheItem.UniqueCode;
 
     //                        TheMagazineSlot.AmmoSlider.gameObject.SetActive(true);
@@ -206,7 +206,7 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
     //                    else if (Theadd && TheMagazine && TheItem && TheItem.Stackable == true)
     //                    {
 
-    //                        TheMagazineSlot.ItemImage.sprite = TheItem.TheSprite;//¸üÐÂÔ¤ÀÀÍ¼
+    //                        TheMagazineSlot.ItemImage.sprite = TheItem.TheSprite;//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Í¼
     //                        TheMagazineSlot.UniqueCode = TheItem.UniqueCode;
 
     //                        TheMagazineSlot.TheText.gameObject.SetActive(true);
@@ -288,23 +288,23 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
 
             if (TheItemSlot && TheBaseItem.InventoryObjs.Length > 0) {
 
-                for (int i2 = 0; i2 < TheBaseItem.InventoryObjs.Length; i2++) // ±éÀúÎïÆ·µÄÎïÆ·À¸
+                for (int i2 = 0; i2 < TheBaseItem.InventoryObjs.Length; i2++) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½
                 {
                     TheItemSlot.TheSlotType = TheBaseItem.InventoryObjs[i2].TheSlotType;
 
-                    if (TheBaseItem.InventoryObjs[i2].TheCount <= 0) //Ã»ÓÐ¶«Î÷ÔòÏÂÒ»Î»
+                    if (TheBaseItem.InventoryObjs[i2].TheCount <= 0) //Ã»ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»
                         continue;
 
                     if (TheBaseItem.InventoryObjs[i2].TheSlotType == CreateNewJson.TheType_InSlot.ForMagazine)
                     {
-                        if (TheBaseItem.InventoryObjs[i2].TheItemData.Stackable) //¿Éµþ¼ÓÎïÆ·
+                        if (TheBaseItem.InventoryObjs[i2].TheItemData.Stackable) //ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½Æ·
                         {
                             TheItemSlot.TheText.gameObject.SetActive(true);
                             TheItemSlot.TheText.text = TheBaseItem.InventoryObjs[i2].TheCount.ToString();
                         }
-                        else //²»¿Éµþ¼ÓÎïÆ·
+                        else //ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½Æ·
                         {
-                            if (TheBaseItem.InventoryObjs[i2].TheItemData.Type == CreateNewJson.TheType.Ammo) //µ±xxÊ±Â¶³öÎïÆ·Ê¹ÓÃ½ø¶ÈÌõ
+                            if (TheBaseItem.InventoryObjs[i2].TheItemData.Type == CreateNewJson.TheType.Ammo) //ï¿½ï¿½xxÊ±Â¶ï¿½ï¿½ï¿½ï¿½Æ·Ê¹ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½
                             {
                                 TheItemSlot.AmmoSlider.gameObject.SetActive(true);
 
@@ -313,7 +313,7 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
                             }
                         }
 
-                        //Éú³ÉÎïÆ·µÄÎïÆ·µÄÍ¼±ê
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Í¼ï¿½ï¿½
 
                         byte[] imageData = File.ReadAllBytes(TheBaseItem.InventoryObjs[i2].TheItemData.TheSprite_Path);
                         Texture2D texture = new Texture2D(2, 2);
@@ -378,17 +378,17 @@ public class UnableallPanel : MonoBehaviour , IPointerClickHandler
     {
         return Sprite.Create(
             texture,
-            new Rect(0, 0, texture.width, texture.height), // ÕûÕÅÍ¼ÇøÓò
-            new Vector2(0.5f, 0.5f)                        // Ãªµã¾ÓÖÐ
+            new Rect(0, 0, texture.width, texture.height), // ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
+            new Vector2(0.5f, 0.5f)                        // Ãªï¿½ï¿½ï¿½ï¿½ï¿½
         );
     }
 
     public void DropThing()
     {
-        TheGetBigGun.DropGun();
+        if (TheGetBigGun != null) TheGetBigGun.DropGun();
         TheGetBigGun.DropItem();
-        TheGetSmallGun.DropGun();
-        TheGetMeleeWeapon.DropGun();
+        if (TheGetSmallGun != null) TheGetSmallGun.DropGun();
+        if (TheGetMeleeWeapon != null) TheGetMeleeWeapon.DropGun();
 
     }
 

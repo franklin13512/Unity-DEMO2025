@@ -4,8 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-public class HandBigGunUpRight : Player
+public class HandBigGunUpRight : MonoBehaviour
 {
+    [Tooltip("鼠标朝向组件（原来从 Player 继承）")]
+    public WatchMouse Watch;
+
     public HingeJoint2D Hand;
     public JointMotor2D HandAngle;
     public JointAngleLimits2D AngleLimits;

@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandGunUp : Player
+public class HandGunUp : MonoBehaviour
 {
+    [Tooltip("鼠标朝向组件（原来从 Player 继承，现改为显式引用）")]
+    public WatchMouse Watch;
+
     public HingeJoint2D Hand;
     public JointMotor2D HandAngle;
     public JointAngleLimits2D AngleLimits;

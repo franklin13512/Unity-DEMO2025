@@ -4,8 +4,14 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting.AssemblyQualifiedNameParser;
 using UnityEngine;
 
-public class TakeDamage : Player
+public class TakeDamage : MonoBehaviour
 {
+    [Tooltip("é¢„åˆ¶ä½“åˆ—è¡¨ï¼ˆåŸæ¥ä» Player ç»§æ‰¿ï¼‰")]
+    public PrefabList ThePrefabList;
+
+    [Tooltip("æ‰€å±è§’è‰²çš„ HealthManagerï¼ˆStart é‡Œç¼“å­˜ï¼‰")]
+    public HealthManager TheHealthManager;
+
     //public HealthManager TheHealth;
 
     public Rigidbody2D ThisRb;
@@ -22,7 +28,7 @@ public class TakeDamage : Player
 
     public bool IsBodyBox;
 
-    ////////////////////////////////////////ÉÕÉËĞ§¹û
+    ////////////////////////////////////////ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½
     public bool IsBurn;
     public float BurnSeverity = 1;
     public float BurnSeverityMax = 3;
@@ -32,7 +38,7 @@ public class TakeDamage : Player
     public float BurnRecoverTime = 150f;
     public bool StartBurnRecover;
 
-    ////////////////////////////////////////Ç¹ÉË
+    ////////////////////////////////////////Ç¹ï¿½ï¿½
     public bool IsGunShot;
     public float GunShotSeverity = 0;
     public float GunShotSeverityMax = 10;
@@ -42,7 +48,7 @@ public class TakeDamage : Player
     public float GunShotRecoverTime = 150f;
     public bool StartGunShotRecover;
 
-    ////////////////////////////////////////¸îÁÑÉË
+    ////////////////////////////////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public bool IsCut;
     public float CutSeverity = 0;
     public float CutSeverityMax = 5;
@@ -52,7 +58,7 @@ public class TakeDamage : Player
     public float CutRecoverTime = 150f;
     public bool StartCutRecover;
 
-    ////////////////////////////////////////ğöÉË
+    ////////////////////////////////////////ï¿½ï¿½ï¿½ï¿½
     public bool IsBruise;
     public float BruiseSeverity = 0;
     public float BruiseSeverityMax = 3;
@@ -62,7 +68,7 @@ public class TakeDamage : Player
     public float BruiseRecoverTime = 150f;
     public bool StartBruiseRecover;
 
-    ////////////////////////////////////////×¥ÉË
+    ////////////////////////////////////////×¥ï¿½ï¿½
     public bool IsScratch;
     public float ScratchSeverity = 0;
     public float ScratchSeverityMax = 5;
@@ -72,7 +78,7 @@ public class TakeDamage : Player
     public float ScratchRecoverTime = 150f;
     public bool StartScratchRecover;
 
-    ////////////////////////////////////////Ò§ÉË
+    ////////////////////////////////////////Ò§ï¿½ï¿½
     public bool IsBiteInjury;
     public float BiteInjurySeverity = 0;
     public float BiteInjurySeverityMax = 6;
@@ -89,18 +95,18 @@ public class TakeDamage : Player
         ThisRb = gameObject.GetComponent<Rigidbody2D>();
 
         TheDirtManager = GameObject.Find("ImportantResource/DirtManager").gameObject.GetComponent<DirtManager>();
-        TheHealthManager = FindComponentInAncestors<HealthManager>(transform);
+        TheHealthManager = Player.FindComponentInAncestors<HealthManager>(transform);
 
-        Player ThePlayer = FindComponentInAncestors<Player>(transform);
 
-        TheStatuseManager = FindComponentInAncestors<StatusManager>(transform);
+
+        TheStatuseManager = Player.FindComponentInAncestors<StatusManager>(transform);
 
         if (IsBodyBox)
         {
             if (TheHealthManager)
             {
                 TheHealthManager.BodyBox = gameObject.GetComponent<BoxCollider2D>();
-                ThePlayer.BodyBox = gameObject.GetComponent<BoxCollider2D>();
+
             }
         }
     }
@@ -164,7 +170,7 @@ public class TakeDamage : Player
             BulletStay TheBulletStay = collision.gameObject.GetComponent<BulletStay>();
             Rigidbody2D TheBulletRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            ////Éú³ÉÑªÒºÁ£×ÓÌØĞ§
+            ////ï¿½ï¿½ï¿½ï¿½ÑªÒºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
             //Vector2 NewPos = collision.transform.position;
             //if (TheBulletRb.velocity.x > 0)
             //{
@@ -184,7 +190,7 @@ public class TakeDamage : Player
             //Destroy(TheBlood, 0.2f);
             ///////////////////////////////////////////////////////////////////////
 
-            //Ëæ»úÉú³ÉÑªÒºÍ¼Æ¬
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÑªÒºÍ¼Æ¬
             float RandomBlood = Random.Range(0, TheDirtManager.Bloods.Length + 50);
             if (0 < RandomBlood && RandomBlood <= TheDirtManager.Bloods.Length - 1)
             {
@@ -286,7 +292,7 @@ public class TakeDamage : Player
     //    ThisRb.bodyType = RigidbodyType2D.Dynamic;
     //}
 
-    ////////////////////////////////////////////////////////////////×´Ì¬À¸ÇøÓò
+    ////////////////////////////////////////////////////////////////×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public void TheBurnFunc()
     {

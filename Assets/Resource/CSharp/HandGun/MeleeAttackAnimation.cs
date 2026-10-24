@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttackAnimation : Player
+public class MeleeAttackAnimation : MonoBehaviour
 {
+    [Tooltip("é¼ æ ‡æœå‘ç»„ä»¶ï¼ˆåŸæ¥ä» Player ç»§æ‰¿ï¼‰")]
+    public WatchMouse Watch;
+
+    [Tooltip("é¢„åˆ¶ä½“åˆ—è¡¨ï¼ˆåŸæ¥ä» Player ç»§æ‰¿ï¼‰")]
+    public PrefabList ThePrefabList;
+
+
     public HingeJoint2D RightHinge;
     public HingeJoint2D RightSmallHinge;
 
     public float UpSpeed;
     public float DownSpeed;
     
-    //ÉèÖÃÓÒÊÖ±ÛĞı×ª½Ç¶È
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½×ªï¿½Ç¶ï¿½
     public float TheRightUpLimit;
     public float TheRightDownLimit;
 
@@ -24,8 +31,8 @@ public class MeleeAttackAnimation : Player
 
     public bool AttackPrepared;
 
-    public float TheTime;//¾àÀëÏÂÒ»´Î¹¥»÷Ê±¼ä
-    public float AttackTime;//ÔÚ´ËÊ±¼äÄÚ¹¥»÷»áÉúĞ§
+    public float TheTime;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î¹ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    public float AttackTime;//ï¿½Ú´ï¿½Ê±ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 
     void Start()
     {

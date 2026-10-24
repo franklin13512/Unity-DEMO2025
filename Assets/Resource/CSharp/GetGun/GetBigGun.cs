@@ -44,6 +44,9 @@ public class GetBigGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (ThePlayer == null) ThePlayer = Player.FindComponentInAncestors<Player>(transform);
+        if (ThePlayer == null) ThePlayer = transform.root.GetComponent<Player>();
+
         IsForward = Watch.IsTurned;
         RightHandPos.SetActive(false);
     }
@@ -166,14 +169,14 @@ public class GetBigGun : MonoBehaviour
 
         ThePlayer.ThingInHand = BigGun;
 
-        //Debug.Log("´æÔÚ£º" +  ThePlayer.ThingInHand.name);
+        //Debug.Log("ï¿½ï¿½ï¿½Ú£ï¿½" +  ThePlayer.ThingInHand.name);
         Destroy(TempObj);
 
         ItemInventorySlot TheAdditionSlot1 = BigGun.gameObject.GetComponent<ItemInventorySlot>();
         ItemInventorySlot TheAdditionSlot2 = TheObj.gameObject.GetComponent<ItemInventorySlot>();
         if (TheAdditionSlot1 && TheAdditionSlot2)
             TheAdditionSlot1.OriginOne = TheAdditionSlot2;
-        //¶ªÆúºóÖØÖÃ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         BigGun.gameObject.SetActive(true);
 
@@ -211,7 +214,7 @@ public class GetBigGun : MonoBehaviour
 
         BigGun.transform.localScale = new Vector2(-Mathf.Abs(BigGun.transform.localScale.x), BigGun.transform.localScale.y);
 
-        //Debug.Log("´æÔÚ£º" + ThePlayer.ThingInHand.name);
+        //Debug.Log("ï¿½ï¿½ï¿½Ú£ï¿½" + ThePlayer.ThingInHand.name);
     }
 
     public void GetItem(string ObjKey)
@@ -265,7 +268,7 @@ public class GetBigGun : MonoBehaviour
 
     public void DropGun()
     {
-        ThePlayer.ThingInHand = null;
+        if (ThePlayer != null) ThePlayer.ThingInHand = null;
 
         Destroy(BigGun);
         RightHandPos.SetActive(false);
@@ -277,7 +280,7 @@ public class GetBigGun : MonoBehaviour
 
     public void DropItem()
     {
-        ThePlayer.ThingInHand = null;
+        if (ThePlayer != null) ThePlayer.ThingInHand = null;
 
         Destroy(TItem);
         RightHandPos2.SetActive(false);

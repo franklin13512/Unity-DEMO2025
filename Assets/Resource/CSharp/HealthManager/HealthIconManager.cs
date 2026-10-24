@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthIconManager : Player
+public class HealthIconManager : MonoBehaviour
 {
+    [Tooltip("é¢„åˆ¶ä½“åˆ—è¡¨ï¼ˆåŽŸæ¥ä»Ž Player ç»§æ‰¿ï¼‰")]
+    public PrefabList ThePrefabList;
+
     public StatusManager TheStatusManager;
     public TakeDamage[] TheTakeDamage;
     public GameObject TheStatusPanel;
@@ -51,14 +54,14 @@ public class HealthIconManager : Player
 
     public void BiteInjuryFunc()
     {
-        if (TheStatusManager.NumberOfBiteInjury > 0 && WhetherBiteInjury == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.NumberOfBiteInjury > 0 && WhetherBiteInjury == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "BiteInjury")
                 {
-                    WhetherBiteInjury = true;//×¢ÒâÕâ¸ö
+                    WhetherBiteInjury = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -71,14 +74,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherBiteInjury = true;//×¢ÒâÕâ¸ö
+                    WhetherBiteInjury = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.NumberOfBiteInjury <= 0 && WhetherBiteInjury == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.NumberOfBiteInjury <= 0 && WhetherBiteInjury == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherBiteInjury = false; //×¢ÒâÕâ¸ö
+            WhetherBiteInjury = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -87,7 +90,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherBiteInjury = false;//×¢ÒâÕâ¸ö
+                    WhetherBiteInjury = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -95,14 +98,14 @@ public class HealthIconManager : Player
     }
     public void TheScratchFunc()
     {
-        if (TheStatusManager.NumberOfScratch > 0 && WhetherScratch == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.NumberOfScratch > 0 && WhetherScratch == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "Scratch")
                 {
-                    WhetherScratch = true;//×¢ÒâÕâ¸ö
+                    WhetherScratch = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -115,14 +118,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherScratch = true;//×¢ÒâÕâ¸ö
+                    WhetherScratch = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.NumberOfScratch <= 0 && WhetherScratch == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.NumberOfScratch <= 0 && WhetherScratch == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherScratch = false; //×¢ÒâÕâ¸ö
+            WhetherScratch = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -131,7 +134,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherScratch = false;//×¢ÒâÕâ¸ö
+                    WhetherScratch = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -139,14 +142,14 @@ public class HealthIconManager : Player
     }
     public void TheGasPoisoningFunc()
     {
-        if (TheStatusManager.IsGasPoisoning == true && WhetherGasPoisoning == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.IsGasPoisoning == true && WhetherGasPoisoning == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "GasPoisoning")
                 {
-                    WhetherGasPoisoning = true;//×¢ÒâÕâ¸ö
+                    WhetherGasPoisoning = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -159,14 +162,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherGasPoisoning = true;//×¢ÒâÕâ¸ö
+                    WhetherGasPoisoning = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.IsGasPoisoning == false && WhetherGasPoisoning == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.IsGasPoisoning == false && WhetherGasPoisoning == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherGasPoisoning = false; //×¢ÒâÕâ¸ö
+            WhetherGasPoisoning = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -175,7 +178,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherGasPoisoning = false;//×¢ÒâÕâ¸ö
+                    WhetherGasPoisoning = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -183,14 +186,14 @@ public class HealthIconManager : Player
     }
     public void TheListlessFunc()
     {
-        if (TheStatusManager.IsListless == true && WhetherListless == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.IsListless == true && WhetherListless == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "Listless")
                 {
-                    WhetherListless = true;//×¢ÒâÕâ¸ö
+                    WhetherListless = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -203,14 +206,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherListless = true;//×¢ÒâÕâ¸ö
+                    WhetherListless = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.IsListless == false && WhetherListless == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.IsListless == false && WhetherListless == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherListless = false; //×¢ÒâÕâ¸ö
+            WhetherListless = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -219,7 +222,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherListless = false;//×¢ÒâÕâ¸ö
+                    WhetherListless = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -227,14 +230,14 @@ public class HealthIconManager : Player
     }
     public void TheExcitementFunc()
     {
-        if (TheStatusManager.IsExcitement == true && WhetherExciting == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.IsExcitement == true && WhetherExciting == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "Excitement")
                 {
-                    WhetherExciting = true;//×¢ÒâÕâ¸ö
+                    WhetherExciting = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -247,14 +250,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherExciting = true;//×¢ÒâÕâ¸ö
+                    WhetherExciting = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.IsExcitement == false && WhetherExciting == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.IsExcitement == false && WhetherExciting == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherExciting = false; //×¢ÒâÕâ¸ö
+            WhetherExciting = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -263,7 +266,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherExciting = false;//×¢ÒâÕâ¸ö
+                    WhetherExciting = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -271,14 +274,14 @@ public class HealthIconManager : Player
     }
     public void TheBruiseFunc()
     {
-        if (TheStatusManager.NumberOfBruise > 0 && WhetherBruis == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.NumberOfBruise > 0 && WhetherBruis == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "Bruise")
                 {
-                    WhetherBruis = true;//×¢ÒâÕâ¸ö
+                    WhetherBruis = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -291,14 +294,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherBruis = true;//×¢ÒâÕâ¸ö
+                    WhetherBruis = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.NumberOfBruise <= 0 && WhetherBruis == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.NumberOfBruise <= 0 && WhetherBruis == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherBruis = false; //×¢ÒâÕâ¸ö
+            WhetherBruis = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -307,7 +310,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherBruis = false;//×¢ÒâÕâ¸ö
+                    WhetherBruis = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -315,14 +318,14 @@ public class HealthIconManager : Player
     }
     public void TheCutFunc()
     {
-        if (TheStatusManager.NumberOfCut > 0 && WhetherCut == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.NumberOfCut > 0 && WhetherCut == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "Cut")
                 {
-                    WhetherCut = true;//×¢ÒâÕâ¸ö
+                    WhetherCut = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -335,14 +338,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherCut = true;//×¢ÒâÕâ¸ö
+                    WhetherCut = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.NumberOfCut <= 0 && WhetherCut == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.NumberOfCut <= 0 && WhetherCut == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherGunShot = false; //×¢ÒâÕâ¸ö
+            WhetherGunShot = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -351,7 +354,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherCut = false;//×¢ÒâÕâ¸ö
+                    WhetherCut = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -359,14 +362,14 @@ public class HealthIconManager : Player
     }
     public void GunShotFunc()
     {
-        if (TheStatusManager.NumberOfGunShot > 0 && WhetherGunShot == false)//×¢ÒâÕâ¸ö
+        if (TheStatusManager.NumberOfGunShot > 0 && WhetherGunShot == false)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
                 if (TheIconInformation != null && TheIconInformation.StatusCode == "GunShot")
                 {
-                    WhetherGunShot = true;//×¢ÒâÕâ¸ö
+                    WhetherGunShot = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -379,14 +382,14 @@ public class HealthIconManager : Player
                     GameObject TheIcon = Instantiate(ThePrefabList.StatusIcon[i].gameObject, transform.position, Quaternion.identity);
                     TheIcon.transform.SetParent(TheStatusPanel.transform);
                     ThePrefabList.ExistedStatusIcon.Add(TheIcon);
-                    WhetherGunShot = true;//×¢ÒâÕâ¸ö
+                    WhetherGunShot = true;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
         }
-        else if (TheStatusManager.NumberOfGunShot <= 0 && WhetherGunShot == true)//×¢ÒâÕâ¸ö
+        else if (TheStatusManager.NumberOfGunShot <= 0 && WhetherGunShot == true)//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            WhetherGunShot = false; //×¢ÒâÕâ¸ö
+            WhetherGunShot = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();
@@ -395,7 +398,7 @@ public class HealthIconManager : Player
                     GameObject DeleteIcon = ThePrefabList.ExistedStatusIcon[i].gameObject;
                     ThePrefabList.ExistedStatusIcon.Remove(ThePrefabList.ExistedStatusIcon[i].gameObject);
                     Destroy(DeleteIcon);
-                    WhetherGunShot = false;//×¢ÒâÕâ¸ö
+                    WhetherGunShot = false;//×¢ï¿½ï¿½ï¿½ï¿½ï¿½
                     return;
                 }
             }
@@ -430,7 +433,7 @@ public class HealthIconManager : Player
         }
         else if (TheStatusManager.IsScabbed == false && WhetherScabbed == true)
         {
-            WhetherScabbed = false; //×¢ÒâÕâ¸ö
+            WhetherScabbed = false; //×¢ï¿½ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < ThePrefabList.ExistedStatusIcon.Count; i++)
             {
                 StatusIconInformation TheIconInformation = ThePrefabList.ExistedStatusIcon[i].gameObject.GetComponent<StatusIconInformation>();

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.U2D.IK;
 using UnityEngine.UI;
 
-public class HealthManager : Player
+public class HealthManager : MonoBehaviour
 {
     public bool IsFemale;
     public bool IsDead;
@@ -38,6 +38,11 @@ public class HealthManager : Player
     public StatusManager TheStatus;
     public Player ThePlayer;
 
+    [Header("物品与身体（角色通用，NPC/敌人也适用）")]
+    public GameObject ThingInHand;
+    public BoxCollider2D BodyBox;
+    public FixedJoint2D TheJoin2D;
+
     public HingeJoint2D TheHinge0;
     public HingeJoint2D TheHinge1;
 
@@ -47,8 +52,8 @@ public class HealthManager : Player
     void Start()
     {
         ThePlayer = gameObject.GetComponent<Player>();
-        if(ThePlayer && ThePlayer.BodyBox)
-            TheRb = ThePlayer.BodyBox.gameObject.GetComponent<Rigidbody2D>();
+        if (BodyBox != null)
+            TheRb = BodyBox.attachedRigidbody;
 
         TheStatus = gameObject.GetComponent<StatusManager>();
         ThePCWalk = gameObject.GetComponent<PCWalk>();
@@ -57,6 +62,15 @@ public class HealthManager : Player
     // Update is called once per frame
     void Update()
     {
+        // 物品摆到手的位置（原 Player.Update 的逻辑）
+        if (ThingInHand != null)
+        {
+            if (TheJoin2D == null)
+                TheJoin2D = ThingInHand.GetComponent<FixedJoint2D>();
+            if (TheJoin2D != null)
+                ThingInHand.transform.position = TheJoin2D.transform.position;
+        }
+
         if (Exploded == true)
         {
             StartCoroutine(TurnToFalse());

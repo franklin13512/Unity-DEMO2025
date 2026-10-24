@@ -43,6 +43,8 @@ public class GetMeleeWeapon : MonoBehaviour
     void Start()
     {
         ThePlayer = HandPos.transform.parent.transform.parent.GetComponent<Player>();
+        if (ThePlayer == null) ThePlayer = Player.FindComponentInAncestors<Player>(transform);
+        if (ThePlayer == null) ThePlayer = transform.root.GetComponent<Player>();
         IsForward = Watch.IsTurned;
         RightHandPos.SetActive(false);
     }
@@ -98,7 +100,7 @@ public class GetMeleeWeapon : MonoBehaviour
         Rigidbody2D Rb2 = TheMeleeWeapon.GetComponent<Rigidbody2D>();
         TheMeleeWeapon.transform.position = HandPos.bounds.center;
 
-        ///////////////////////////////////////////////////////////°ó¶¨ÔÚÊÖÉÏ
+        ///////////////////////////////////////////////////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Item PistolC = TheMeleeWeapon.GetComponent<Item>();
         PistolC.IsEquiped = true;
 
@@ -160,7 +162,7 @@ public class GetMeleeWeapon : MonoBehaviour
         Rigidbody2D Rb2 = TheMeleeWeapon.GetComponent<Rigidbody2D>();
         TheMeleeWeapon.transform.position = HandPos.bounds.center;
 
-        ///////////////////////////////////////////////////////////°ó¶¨ÔÚÊÖÉÏ
+        ///////////////////////////////////////////////////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Item PistolC = TheMeleeWeapon.GetComponent<Item>();
         PistolC.IsEquiped = true;
 
