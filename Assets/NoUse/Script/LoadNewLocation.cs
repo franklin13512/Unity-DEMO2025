@@ -18,12 +18,12 @@ public class LoadNewLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Interact"))
-        {
-            TheDoNotDestroy.LoadSceneAsync(SceneName);
+        //if (Input.GetButtonDown("Interact"))
+        //{
+        //    TheDoNotDestroy.LoadSceneAsync(SceneName);
 
 
-        }
+        //}
     }
 
 
@@ -33,7 +33,7 @@ public class LoadNewLocation : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && collision.gameObject.tag == "Player")
         {
-            TheDoNotDestroy.LoadSceneAsync(SceneName);
+            // TheDoNotDestroy.LoadSceneAsync(SceneName);   // 旧实现，已由 SceneLoader/ScenePortal 取代
 
 
         }

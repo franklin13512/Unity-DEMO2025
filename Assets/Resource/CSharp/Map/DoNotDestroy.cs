@@ -22,46 +22,4 @@ public class DoNotDestroy : MonoBehaviour
     {
 
     }
-
-    public void LoadSceneAsync(string sceneName)
-    {
-        StartCoroutine(LoadAsync(sceneName));
-    }
-
-    IEnumerator LoadAsync(string sceneName)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        while (!asyncLoad.isDone)
-        {
-            ObjNotToDestroy[1].gameObject.GetComponent<Player>().BodyBox.attachedRigidbody.bodyType = RigidbodyType2D.Static;
-            foreach (Rigidbody2D TheRb in ObjNotToDestroy[1].gameObject.GetComponent<Player>().TheLimbRbs)
-            {
-                if (TheRb.gameObject.GetComponent<HingeJoint2D>().enabled == true)
-                {
-                    TheRb.gameObject.GetComponent<HingeJoint2D>().enabled = false;
-                }
-
-            }
-            // 可以在这里更新加载进度条
-            yield return null;
-        }
-
-
-
-        foreach (Rigidbody2D TheRb in ObjNotToDestroy[1].gameObject.GetComponent<Player>().TheLimbRbs)
-        {
-            if (TheRb.gameObject.GetComponent<HingeJoint2D>().enabled == false)
-            {
-                TheRb.gameObject.GetComponent<HingeJoint2D>().enabled = true;
-            }
-
-        }
-
-        yield return new WaitForSeconds(8);
-
-        ObjNotToDestroy[1].gameObject.GetComponent<Player>().BodyBox.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
-
-        ObjNotToDestroy[1].gameObject.GetComponent<Player>().BodyBox.attachedRigidbody.velocity = Vector2.zero;
-
-    }
 }

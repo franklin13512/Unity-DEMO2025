@@ -37,7 +37,7 @@ public class Slotsss : MonoBehaviour
     {
         for (int i = 0; i < ItemSlot.Length; i++)
         {
-            ItemSlot[i].TheIndex = i;
+            if (ItemSlot[i] != null) ItemSlot[i].TheIndex = i;
         }
     }
 
